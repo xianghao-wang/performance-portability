@@ -1,0 +1,233 @@
+Fri 19 Aug 11:22:49 BST 2022
+/lustre/home/br-wlin/performance-portability/benchmarking/2022/bude/results/miniBUDE-milan_nvhpc-22.7_std-indices
+	linux-vdso.so.1 (0x00007ffe400fc000)
+	libacchost.so => /lustre/home/br-wlin/nvhpc_sdk/Linux_x86_64/22.7/compilers/lib/libacchost.so (0x0000149e79016000)
+	libdl.so.2 => /usr/lib/gcc/x86_64-redhat-linux/8/../../../../lib64/libdl.so.2 (0x0000149e78e12000)
+	libatomic.so.1 => /lustre/projects/bristol/modules/gcc/10.3.0/lib64/libatomic.so.1 (0x0000149e78c0a000)
+	libnvhpcatm.so => /lustre/home/br-wlin/nvhpc_sdk/Linux_x86_64/22.7/compilers/lib/libnvhpcatm.so (0x0000149e789ff000)
+	libstdc++.so.6 => /usr/lib/gcc/x86_64-redhat-linux/8/../../../../lib64/libstdc++.so.6 (0x0000149e7866a000)
+	libnvomp.so => /lustre/home/br-wlin/nvhpc_sdk/Linux_x86_64/22.7/compilers/lib/libnvomp.so (0x0000149e77960000)
+	libpthread.so.0 => /usr/lib/gcc/x86_64-redhat-linux/8/../../../../lib64/libpthread.so.0 (0x0000149e77740000)
+	libnvcpumath.so => /lustre/home/br-wlin/nvhpc_sdk/Linux_x86_64/22.7/compilers/lib/libnvcpumath.so (0x0000149e77339000)
+	libnvc.so => /lustre/home/br-wlin/nvhpc_sdk/Linux_x86_64/22.7/compilers/lib/libnvc.so (0x0000149e770d6000)
+	librt.so.1 => /usr/lib/gcc/x86_64-redhat-linux/8/../../../../lib64/librt.so.1 (0x0000149e76ece000)
+	libc.so.6 => /usr/lib/gcc/x86_64-redhat-linux/8/../../../../lib64/libc.so.6 (0x0000149e76b0b000)
+	libgcc_s.so.1 => /usr/lib/gcc/x86_64-redhat-linux/8/../../../../lib64/libgcc_s.so.1 (0x0000149e768f3000)
+	libm.so.6 => /usr/lib/gcc/x86_64-redhat-linux/8/../../../../lib64/libm.so.6 (0x0000149e76571000)
+	/lib64/ld-linux-x86-64.so.2 (0x0000149e79287000)
+miniBUDE:  
+compile_commands:
+   - "/lustre/home/br-wlin/nvhpc_sdk/Linux_x86_64/22.7/compilers/bin/nvc++ -DSTD_INDICES -DUSE_PPWI=1,2,4,8,16,32,64,128 -I<SRC>/std-indices -I/lustre/home/br-wlin/performance-portability/benchmarking/2022/bude/results/miniBUDE-milan_nvhpc-22.7_std-indices/miniBUDE/build/generated -fast  -DNDEBUG -O3 -march=native -target=multicore -stdpar -march=zen3 -fast -Mx,15,0x8 --c++17 -o <OUT>/src/main.cpp.o -c <SRC>/main.cpp"
+vcs:
+  commit:  e26f036ddffba30d7edf9893dbb7423c9ca98ce9*
+  author:  "Tom Lin (tom91136@gmail.com)"
+  date:    "2022-08-19 10:12:06 +0000"
+  subject: "Fixup Kokkos results"
+host_cpu:
+  ~
+time: { epoch_s:1660904569, formatted: "Fri Aug 19 10:22:49 2022 GMT" }
+devices:
+  0: "(not exposed)"
+miniBUDE:  
+compile_commands:
+   - "/lustre/home/br-wlin/nvhpc_sdk/Linux_x86_64/22.7/compilers/bin/nvc++ -DSTD_INDICES -DUSE_PPWI=1,2,4,8,16,32,64,128 -I<SRC>/std-indices -I/lustre/home/br-wlin/performance-portability/benchmarking/2022/bude/results/miniBUDE-milan_nvhpc-22.7_std-indices/miniBUDE/build/generated -fast  -DNDEBUG -O3 -march=native -target=multicore -stdpar -march=zen3 -fast -Mx,15,0x8 --c++17 -o <OUT>/src/main.cpp.o -c <SRC>/main.cpp"
+vcs:
+  commit:  e26f036ddffba30d7edf9893dbb7423c9ca98ce9*
+  author:  "Tom Lin (tom91136@gmail.com)"
+  date:    "2022-08-19 10:12:06 +0000"
+  subject: "Fixup Kokkos results"
+host_cpu:
+  ~
+time: { epoch_s:1660904570, formatted: "Fri Aug 19 10:22:50 2022 GMT" }
+deck:
+  path:         "miniBUDE/data/bm1"
+  poses:        65536
+  proteins:     938
+  ligands:      26
+  forcefields:  34
+config:
+  iterations:   8
+  poses:        65536
+  ppwi:
+    available:  [1,2,4,8,16,32,64,128]
+    selected:   [1,2,4,8,16,32,64,128]
+  wgsize:       [1]
+device: { index: 0,  name: "(not exposed)" }
+# (ppwi=1,wgsize=1,valid=1)
+# (ppwi=2,wgsize=1,valid=1)
+# (ppwi=4,wgsize=1,valid=1)
+# (ppwi=8,wgsize=1,valid=1)
+# (ppwi=16,wgsize=1,valid=1)
+# (ppwi=32,wgsize=1,valid=1)
+# (ppwi=64,wgsize=1,valid=1)
+# (ppwi=128,wgsize=1,valid=1)
+results:
+  - outcome:             { valid: true, max_diff_%: 0.003 }
+    param:               { ppwi: 1, wgsize: 1 }
+    raw_iterations:      [168.323,124.338,123.889,123.773,124.17,122.019,122.252,122.383,122.291,122.349]
+    context_ms:          0.334177
+    sum_ms:              983.126
+    avg_ms:              122.891
+    min_ms:              122.019
+    max_ms:              124.170
+    stddev_ms:           0.829
+    giga_interactions/s: 13.006
+    gflop/s:             520.524
+    gfinst/s:            325.145
+    energies:            
+      - 865.52
+      - 25.07
+      - 368.43
+      - 14.67
+      - 574.99
+      - 707.35
+      - 33.95
+      - 135.59
+  - outcome:             { valid: true, max_diff_%: 0.003 }
+    param:               { ppwi: 2, wgsize: 1 }
+    raw_iterations:      [74.9707,75.2719,75.1869,75.0133,74.8553,74.8557,74.8092,74.7772,74.8296,74.8596]
+    context_ms:          0.575240
+    sum_ms:              599.187
+    avg_ms:              74.898
+    min_ms:              74.777
+    max_ms:              75.187
+    stddev_ms:           0.127
+    giga_interactions/s: 21.339
+    gflop/s:             747.339
+    gfinst/s:            533.487
+    energies:            
+      - 865.52
+      - 25.07
+      - 368.43
+      - 14.67
+      - 574.99
+      - 707.35
+      - 33.95
+      - 135.59
+  - outcome:             { valid: true, max_diff_%: 0.003 }
+    param:               { ppwi: 4, wgsize: 1 }
+    raw_iterations:      [36.8172,37.105,37.0334,37.0586,37.0396,37.0786,37.0127,36.9739,36.948,36.8883]
+    context_ms:          0.632106
+    sum_ms:              296.033
+    avg_ms:              37.004
+    min_ms:              36.888
+    max_ms:              37.079
+    stddev_ms:           0.059
+    giga_interactions/s: 43.192
+    gflop/s:             1404.650
+    gfinst/s:            1079.806
+    energies:            
+      - 865.52
+      - 25.07
+      - 368.43
+      - 14.67
+      - 574.99
+      - 707.35
+      - 33.95
+      - 135.59
+  - outcome:             { valid: true, max_diff_%: 0.003 }
+    param:               { ppwi: 8, wgsize: 1 }
+    raw_iterations:      [20.7141,21.056,20.9503,21.0132,20.9868,20.9042,20.9498,20.9421,20.8548,20.9564]
+    context_ms:          0.597581
+    sum_ms:              167.558
+    avg_ms:              20.945
+    min_ms:              20.855
+    max_ms:              21.013
+    stddev_ms:           0.045
+    giga_interactions/s: 76.310
+    gflop/s:             2386.262
+    gfinst/s:            1907.752
+    energies:            
+      - 865.52
+      - 25.07
+      - 368.43
+      - 14.67
+      - 574.99
+      - 707.35
+      - 33.95
+      - 135.59
+  - outcome:             { valid: true, max_diff_%: 0.003 }
+    param:               { ppwi: 16, wgsize: 1 }
+    raw_iterations:      [16.2471,16.4362,16.4738,16.4676,16.5029,16.478,16.4736,16.4827,16.4908,16.4547]
+    context_ms:          0.667944
+    sum_ms:              131.824
+    avg_ms:              16.478
+    min_ms:              16.455
+    max_ms:              16.503
+    stddev_ms:           0.014
+    giga_interactions/s: 96.995
+    gflop/s:             2972.470
+    gfinst/s:            2424.885
+    energies:            
+      - 865.52
+      - 25.07
+      - 368.43
+      - 14.67
+      - 574.99
+      - 707.35
+      - 33.95
+      - 135.59
+  - outcome:             { valid: true, max_diff_%: 0.003 }
+    param:               { ppwi: 32, wgsize: 1 }
+    raw_iterations:      [23.1119,23.2162,23.1747,23.2078,23.2173,23.1782,23.194,23.2057,23.1731,23.2047]
+    context_ms:          0.549171
+    sum_ms:              185.556
+    avg_ms:              23.194
+    min_ms:              23.173
+    max_ms:              23.217
+    stddev_ms:           0.016
+    giga_interactions/s: 68.908
+    gflop/s:             2090.191
+    gfinst/s:            1722.710
+    energies:            
+      - 865.52
+      - 25.07
+      - 368.43
+      - 14.67
+      - 574.99
+      - 707.35
+      - 33.95
+      - 135.59
+  - outcome:             { valid: true, max_diff_%: 0.003 }
+    param:               { ppwi: 64, wgsize: 1 }
+    raw_iterations:      [21.8164,21.9775,22.0094,22.0102,22.0141,21.9823,21.9489,21.9728,22.006,21.9818]
+    context_ms:          0.636374
+    sum_ms:              175.925
+    avg_ms:              21.991
+    min_ms:              21.949
+    max_ms:              22.014
+    stddev_ms:           0.022
+    giga_interactions/s: 72.680
+    gflop/s:             2193.249
+    gfinst/s:            1817.010
+    energies:            
+      - 865.52
+      - 25.07
+      - 368.43
+      - 14.67
+      - 574.99
+      - 707.35
+      - 33.95
+      - 135.59
+  - outcome:             { valid: true, max_diff_%: 0.003 }
+    param:               { ppwi: 128, wgsize: 1 }
+    raw_iterations:      [21.0025,21.0793,21.0538,21.1232,21.0238,21.0676,21.0552,21.0645,21.0568,21.0779]
+    context_ms:          0.718819
+    sum_ms:              168.523
+    avg_ms:              21.065
+    min_ms:              21.024
+    max_ms:              21.123
+    stddev_ms:           0.026
+    giga_interactions/s: 75.873
+    gflop/s:             2283.663
+    gfinst/s:            1896.826
+    energies:            
+      - 865.52
+      - 25.07
+      - 368.43
+      - 14.67
+      - 574.99
+      - 707.35
+      - 33.95
+      - 135.59
+best: { min_ms: 16.45, max_ms: 16.50, sum_ms: 131.82, avg_ms: 16.48, ppwi: 16, wgsize: 1 }

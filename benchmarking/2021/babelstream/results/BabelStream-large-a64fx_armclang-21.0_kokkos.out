@@ -1,0 +1,15 @@
+WARNING: Did not unuse /opt/cray/pe/craype/2.7.0/modulefiles
+Thu Sep  2 11:07:03 CDT 2021
+BabelStream
+Version: 3.4
+Implementation: Kokkos
+Running kernels 100 times
+Precision: double
+Array size: 4295.0 MB (=4.3 GB)
+Total size: 12884.9 MB (=12.9 GB)
+Function    MBytes/sec  Min (sec)   Max         Average     
+Copy        546641.027  0.01571     0.03517     0.01597     
+Mul         545801.868  0.01574     0.03286     0.01606     
+Add         603771.937  0.02134     0.04016     0.02163     
+Triad       599249.293  0.02150     0.05249     0.02199     
+Dot         862525.068  0.00996     0.01064     0.01000     

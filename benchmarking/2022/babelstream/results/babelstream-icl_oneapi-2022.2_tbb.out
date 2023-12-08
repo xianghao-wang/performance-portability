@@ -1,0 +1,31 @@
+Wed 17 Aug 15:04:26 GMT 2022
+/home/br-wlin/performance-portability/benchmarking/2022/babelstream/results/babelstream-icl_oneapi-2022.2_tbb
+	linux-vdso.so.1 (0x0000155555551000)
+	libtbb.so.12 => /home/br-wlin/performance-portability/benchmarking/2022/babelstream/results/babelstream-icl_oneapi-2022.2_tbb/BabelStream/build/intelllvm_2022.1_cxx11_64_release/libtbb.so.12 (0x00001555554e1000)
+	libstdc++.so.6 => /lustre/projects/bristol/modules/gcc/12.1.0/lib64/libstdc++.so.6 (0x0000155555103000)
+	libm.so.6 => /lib64/libm.so.6 (0x0000155554d81000)
+	libgcc_s.so.1 => /lustre/projects/bristol/modules/gcc/12.1.0/lib64/libgcc_s.so.1 (0x00001555554a7000)
+	libdl.so.2 => /lib64/libdl.so.2 (0x0000155554b7d000)
+	libc.so.6 => /lib64/libc.so.6 (0x00001555547bb000)
+	libsvml.so => /lustre/home/br-wlin/intel/oneapi/compiler/2022.1.0/linux/compiler/lib/intel64_lin/libsvml.so (0x00001555527fd000)
+	libirng.so => /lustre/home/br-wlin/intel/oneapi/compiler/2022.1.0/linux/compiler/lib/intel64_lin/libirng.so (0x0000155552493000)
+	libimf.so => /lustre/home/br-wlin/intel/oneapi/compiler/2022.1.0/linux/compiler/lib/intel64_lin/libimf.so (0x0000155551e05000)
+	libintlc.so.5 => /lustre/home/br-wlin/intel/oneapi/compiler/2022.1.0/linux/compiler/lib/intel64_lin/libintlc.so.5 (0x0000155551b8d000)
+	libpthread.so.0 => /lib64/libpthread.so.0 (0x000015555196d000)
+	/lib64/ld-linux-x86-64.so.2 (0x000015555532b000)
+Listing devices is not supported by TBB
+BabelStream
+Version: 4.0
+Implementation: TBB
+Running kernels 100 times
+Precision: double
+Array size: 4295.0 MB (=4.3 GB)
+Total size: 12884.9 MB (=12.9 GB)
+Using TBB partitioner: auto_partitioner
+Backing storage typeid: Pd
+Function    MBytes/sec  Min (sec)   Max         Average     
+Copy        65876.953   0.13039     0.17078     0.15254     
+Mul         75093.958   0.11439     0.16805     0.14647     
+Add         67045.399   0.19218     0.22163     0.20398     
+Triad       74723.547   0.17243     0.21820     0.19965     
+Dot         90204.991   0.09523     0.13661     0.12371     

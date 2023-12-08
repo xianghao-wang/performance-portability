@@ -1,0 +1,52 @@
+Thu  2 Sep 15:53:34 UTC 2021
+xcimom2
+BabelStream
+Version: 3.4
+Implementation: Kokkos
+Running kernels 100 times
+Precision: double
+Array size: 4295.0 MB (=4.3 GB)
+Total size: 12884.9 MB (=12.9 GB)
+Function    MBytes/sec  Min (sec)   Max         Average     
+Copy        226120.859  0.03799     0.03824     0.03811     
+Mul         214092.690  0.04012     0.04334     0.04085     
+Add         230020.590  0.05602     0.06098     0.05921     
+Triad       219968.567  0.05858     0.06423     0.06265     
+Dot         233386.563  0.03681     0.03761     0.03716     
+Application 1852524 resources: utime ~1594s, stime ~822s, Rss ~25158004, inblocks ~2504, outblocks ~0
+============================= PBS epilogue =============================
+
+End of Job Report
+Run at 2021-09-02 15:54:36 for job 140126.xci00
+Submitted              : 2021-09-02 15:53:28
+Queued                 : 2021-09-02 15:53:28
+Started                : 2021-09-02 15:53:33
+Completed              : 2021-09-02 15:54:36
+Queued Time            : 0:00:05 (5 seconds)
+Elapsed Time           : 0:00:57 (57 seconds, 3% of limit)
+Walltime Limit         : 0:30:00 (1800 seconds)
+Node Time Limit        : 0:30:00 (1800 seconds)
+Node Time              : 0:00:57 (57 seconds, 3% of limit)
+Job Name               : babelstream
+Queue                  : arm
+Owner                  : br-wlin
+Group                  : -default-
+Project                : GW03
+Subproject             : 
+Funding                : 
+Trustzone              : 
+STDOUT                 : /home/br-wlin/performance-portability/benchmarking/2021/babelstream/results/BabelStream-large-tx2_llvm-11.0_kokkos.out
+STDERR                 : /home/br-wlin/performance-portability/benchmarking/2021/babelstream/results/babelstream.e140126
+Job Directory          : /home/br-wlin/pbs.140126.xci00.x8z
+Job Arch               : XT
+CPU Core Type          : arm
+Total Nodes            : 1
+Total Tasks            : 64
+Parent Node            : xcimom2
+Parent Node Memory     : 
+Parent Node CPU Time   : 
+Compute Nodes          : 149
+Electrical Groups      : 1
+Run Version            : 1
+
+For more information see https://gw4-isambard.github.io/docs/

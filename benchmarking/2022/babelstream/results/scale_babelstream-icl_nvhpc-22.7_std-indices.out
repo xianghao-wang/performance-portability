@@ -1,0 +1,1169 @@
+Tue 16 Aug 10:17:25 GMT 2022
+/home/br-wlin/performance-portability/benchmarking/2022/babelstream/results/babelstream-icl_nvhpc-22.7_std-indices
+	linux-vdso.so.1 (0x0000155555551000)
+	libacchost.so => /lustre/home/br-wlin/nvhpc_sdk/Linux_x86_64/22.7/compilers/lib/libacchost.so (0x00001555550ba000)
+	libdl.so.2 => /usr/lib/gcc/x86_64-redhat-linux/8/../../../../lib64/libdl.so.2 (0x0000155554eb6000)
+	libatomic.so.1 => /usr/lib/gcc/x86_64-redhat-linux/8/../../../../lib64/libatomic.so.1 (0x0000155554cae000)
+	libnvhpcatm.so => /lustre/home/br-wlin/nvhpc_sdk/Linux_x86_64/22.7/compilers/lib/libnvhpcatm.so (0x0000155554aa3000)
+	libstdc++.so.6 => /usr/lib/gcc/x86_64-redhat-linux/8/../../../../lib64/libstdc++.so.6 (0x000015555470e000)
+	libnvomp.so => /lustre/home/br-wlin/nvhpc_sdk/Linux_x86_64/22.7/compilers/lib/libnvomp.so (0x0000155553a04000)
+	libpthread.so.0 => /usr/lib/gcc/x86_64-redhat-linux/8/../../../../lib64/libpthread.so.0 (0x00001555537e4000)
+	libnvcpumath-avx512.so => /lustre/home/br-wlin/nvhpc_sdk/Linux_x86_64/22.7/compilers/lib/libnvcpumath-avx512.so (0x00001555533dd000)
+	libnvc.so => /lustre/home/br-wlin/nvhpc_sdk/Linux_x86_64/22.7/compilers/lib/libnvc.so (0x000015555317a000)
+	librt.so.1 => /usr/lib/gcc/x86_64-redhat-linux/8/../../../../lib64/librt.so.1 (0x0000155552f71000)
+	libc.so.6 => /usr/lib/gcc/x86_64-redhat-linux/8/../../../../lib64/libc.so.6 (0x0000155552baf000)
+	libgcc_s.so.1 => /usr/lib/gcc/x86_64-redhat-linux/8/../../../../lib64/libgcc_s.so.1 (0x0000155552997000)
+	libm.so.6 => /usr/lib/gcc/x86_64-redhat-linux/8/../../../../lib64/libm.so.6 (0x0000155552615000)
+	/lib64/ld-linux-x86-64.so.2 (0x000015555532b000)
+>>>1>>>
+Tue 16 Aug 10:17:25 GMT 2022
+Listing devices is not supported by the Parallel STL
+BabelStream
+Version: 4.0
+Implementation: STD (index-oriented)
+Running kernels 100 times
+Precision: double
+Array size: 4295.0 MB (=4.3 GB)
+Total size: 12884.9 MB (=12.9 GB)
+Backing storage typeid: Pd
+Function    MBytes/sec  Min (sec)   Max         Average     
+Copy        12920.782   0.66482     0.66752     0.66544     
+Mul         12307.424   0.69795     0.70162     0.69873     
+Add         13184.995   0.97724     0.98175     0.97813     
+Triad       12989.825   0.99192     0.99601     0.99278     
+Dot         11156.615   0.76994     0.77227     0.77072     
+<<<1<<<
+>>>2>>>
+Tue 16 Aug 10:24:24 GMT 2022
+Listing devices is not supported by the Parallel STL
+BabelStream
+Version: 4.0
+Implementation: STD (index-oriented)
+Running kernels 100 times
+Precision: double
+Array size: 4295.0 MB (=4.3 GB)
+Total size: 12884.9 MB (=12.9 GB)
+Backing storage typeid: Pd
+Function    MBytes/sec  Min (sec)   Max         Average     
+Copy        24618.625   0.34892     0.35505     0.35017     
+Mul         23543.271   0.36486     0.37138     0.36651     
+Add         25293.890   0.50941     0.51697     0.51113     
+Triad       25010.002   0.51519     0.51964     0.51635     
+Dot         22183.265   0.38723     0.38939     0.38764     
+<<<2<<<
+>>>3>>>
+Tue 16 Aug 10:28:04 GMT 2022
+Listing devices is not supported by the Parallel STL
+BabelStream
+Version: 4.0
+Implementation: STD (index-oriented)
+Running kernels 100 times
+Precision: double
+Array size: 4295.0 MB (=4.3 GB)
+Total size: 12884.9 MB (=12.9 GB)
+Backing storage typeid: Pd
+Function    MBytes/sec  Min (sec)   Max         Average     
+Copy        34469.194   0.24921     0.25104     0.24998     
+Mul         33358.012   0.25751     0.25909     0.25798     
+Add         35855.611   0.35936     0.36198     0.36013     
+Triad       35624.851   0.36168     0.36384     0.36249     
+Dot         33093.858   0.25956     0.26125     0.25993     
+<<<3<<<
+>>>4>>>
+Tue 16 Aug 10:30:39 GMT 2022
+Listing devices is not supported by the Parallel STL
+BabelStream
+Version: 4.0
+Implementation: STD (index-oriented)
+Running kernels 100 times
+Precision: double
+Array size: 4295.0 MB (=4.3 GB)
+Total size: 12884.9 MB (=12.9 GB)
+Backing storage typeid: Pd
+Function    MBytes/sec  Min (sec)   Max         Average     
+Copy        43880.017   0.19576     0.19715     0.19618     
+Mul         42423.326   0.20248     0.20468     0.20284     
+Add         45328.327   0.28426     0.30777     0.28501     
+Triad       45115.710   0.28560     0.29045     0.28639     
+Dot         43765.612   0.19627     0.19859     0.19664     
+<<<4<<<
+>>>5>>>
+Tue 16 Aug 10:32:43 GMT 2022
+Listing devices is not supported by the Parallel STL
+BabelStream
+Version: 4.0
+Implementation: STD (index-oriented)
+Running kernels 100 times
+Precision: double
+Array size: 4295.0 MB (=4.3 GB)
+Total size: 12884.9 MB (=12.9 GB)
+Backing storage typeid: Pd
+Function    MBytes/sec  Min (sec)   Max         Average     
+Copy        52176.878   0.16463     0.16652     0.16500     
+Mul         50521.324   0.17003     0.17246     0.17138     
+Add         53727.369   0.23982     0.24150     0.24036     
+Triad       53569.227   0.24053     0.24238     0.24101     
+Dot         54017.331   0.15902     0.16019     0.15939     
+<<<5<<<
+>>>6>>>
+Tue 16 Aug 10:34:27 GMT 2022
+Listing devices is not supported by the Parallel STL
+BabelStream
+Version: 4.0
+Implementation: STD (index-oriented)
+Running kernels 100 times
+Precision: double
+Array size: 4295.0 MB (=4.3 GB)
+Total size: 12884.9 MB (=12.9 GB)
+Backing storage typeid: Pd
+Function    MBytes/sec  Min (sec)   Max         Average     
+Copy        59935.824   0.14332     0.14467     0.14381     
+Mul         58254.966   0.14745     0.14957     0.14796     
+Add         62112.223   0.20745     0.20934     0.20801     
+Triad       61933.016   0.20805     0.20979     0.20864     
+Dot         63830.552   0.13457     0.13602     0.13504     
+<<<6<<<
+>>>7>>>
+Tue 16 Aug 10:35:57 GMT 2022
+Listing devices is not supported by the Parallel STL
+BabelStream
+Version: 4.0
+Implementation: STD (index-oriented)
+Running kernels 100 times
+Precision: double
+Array size: 4295.0 MB (=4.3 GB)
+Total size: 12884.9 MB (=12.9 GB)
+Backing storage typeid: Pd
+Function    MBytes/sec  Min (sec)   Max         Average     
+Copy        66594.605   0.12899     0.13021     0.12944     
+Mul         65010.335   0.13213     0.13398     0.13278     
+Add         69434.290   0.18557     0.18651     0.18600     
+Triad       69363.494   0.18576     0.18690     0.18627     
+Dot         72849.555   0.11791     0.11961     0.11822     
+<<<7<<<
+>>>8>>>
+Tue 16 Aug 10:37:18 GMT 2022
+Listing devices is not supported by the Parallel STL
+BabelStream
+Version: 4.0
+Implementation: STD (index-oriented)
+Running kernels 100 times
+Precision: double
+Array size: 4295.0 MB (=4.3 GB)
+Total size: 12884.9 MB (=12.9 GB)
+Backing storage typeid: Pd
+Function    MBytes/sec  Min (sec)   Max         Average     
+Copy        72832.547   0.11794     0.12013     0.11861     
+Mul         70675.291   0.12154     0.12242     0.12195     
+Add         77011.030   0.16731     0.16848     0.16765     
+Triad       76785.390   0.16780     0.16896     0.16818     
+Dot         81324.942   0.10562     0.10635     0.10592     
+<<<8<<<
+>>>9>>>
+Tue 16 Aug 10:38:33 GMT 2022
+Listing devices is not supported by the Parallel STL
+BabelStream
+Version: 4.0
+Implementation: STD (index-oriented)
+Running kernels 100 times
+Precision: double
+Array size: 4295.0 MB (=4.3 GB)
+Total size: 12884.9 MB (=12.9 GB)
+Backing storage typeid: Pd
+Function    MBytes/sec  Min (sec)   Max         Average     
+Copy        77580.078   0.11072     0.11185     0.11129     
+Mul         76247.954   0.11266     0.11418     0.11308     
+Add         83965.134   0.15346     0.15509     0.15416     
+Triad       84116.553   0.15318     0.15490     0.15374     
+Dot         90103.768   0.09533     0.09620     0.09561     
+<<<9<<<
+>>>10>>>
+Tue 16 Aug 10:39:41 GMT 2022
+Listing devices is not supported by the Parallel STL
+BabelStream
+Version: 4.0
+Implementation: STD (index-oriented)
+Running kernels 100 times
+Precision: double
+Array size: 4295.0 MB (=4.3 GB)
+Total size: 12884.9 MB (=12.9 GB)
+Backing storage typeid: Pd
+Function    MBytes/sec  Min (sec)   Max         Average     
+Copy        80879.038   0.10621     0.10717     0.10661     
+Mul         79758.991   0.10770     0.10905     0.10805     
+Add         89158.217   0.14452     0.14538     0.14493     
+Triad       88561.329   0.14549     0.14649     0.14577     
+Dot         97594.400   0.08802     0.08870     0.08830     
+<<<10<<<
+>>>11>>>
+Tue 16 Aug 10:40:47 GMT 2022
+Listing devices is not supported by the Parallel STL
+BabelStream
+Version: 4.0
+Implementation: STD (index-oriented)
+Running kernels 100 times
+Precision: double
+Array size: 4295.0 MB (=4.3 GB)
+Total size: 12884.9 MB (=12.9 GB)
+Backing storage typeid: Pd
+Function    MBytes/sec  Min (sec)   Max         Average     
+Copy        84651.413   0.10147     0.10291     0.10193     
+Mul         82994.642   0.10350     0.10537     0.10389     
+Add         93594.430   0.13767     0.13880     0.13812     
+Triad       93110.645   0.13838     0.13939     0.13876     
+Dot         105131.099  0.08171     0.08276     0.08195     
+<<<11<<<
+>>>12>>>
+Tue 16 Aug 10:41:49 GMT 2022
+Listing devices is not supported by the Parallel STL
+BabelStream
+Version: 4.0
+Implementation: STD (index-oriented)
+Running kernels 100 times
+Precision: double
+Array size: 4295.0 MB (=4.3 GB)
+Total size: 12884.9 MB (=12.9 GB)
+Backing storage typeid: Pd
+Function    MBytes/sec  Min (sec)   Max         Average     
+Copy        88012.785   0.09760     0.09857     0.09808     
+Mul         86118.533   0.09975     0.10144     0.10041     
+Add         97462.679   0.13220     0.13312     0.13259     
+Triad       97352.188   0.13235     0.13330     0.13264     
+Dot         112589.395  0.07629     0.07705     0.07648     
+<<<12<<<
+>>>13>>>
+Tue 16 Aug 10:42:49 GMT 2022
+Listing devices is not supported by the Parallel STL
+BabelStream
+Version: 4.0
+Implementation: STD (index-oriented)
+Running kernels 100 times
+Precision: double
+Array size: 4295.0 MB (=4.3 GB)
+Total size: 12884.9 MB (=12.9 GB)
+Backing storage typeid: Pd
+Function    MBytes/sec  Min (sec)   Max         Average     
+Copy        89481.562   0.09600     0.09699     0.09634     
+Mul         88342.089   0.09723     0.09792     0.09753     
+Add         100588.085  0.12810     0.12896     0.12849     
+Triad       100697.894  0.12796     0.12942     0.12833     
+Dot         119848.832  0.07167     0.07223     0.07189     
+<<<13<<<
+>>>14>>>
+Tue 16 Aug 10:43:48 GMT 2022
+Listing devices is not supported by the Parallel STL
+BabelStream
+Version: 4.0
+Implementation: STD (index-oriented)
+Running kernels 100 times
+Precision: double
+Array size: 4295.0 MB (=4.3 GB)
+Total size: 12884.9 MB (=12.9 GB)
+Backing storage typeid: Pd
+Function    MBytes/sec  Min (sec)   Max         Average     
+Copy        91682.225   0.09369     0.09457     0.09408     
+Mul         91182.729   0.09421     0.09508     0.09460     
+Add         103302.234  0.12473     0.12556     0.12512     
+Triad       103155.873  0.12491     0.12591     0.12538     
+Dot         126033.632  0.06816     0.06929     0.06839     
+<<<14<<<
+>>>15>>>
+Tue 16 Aug 10:44:44 GMT 2022
+Listing devices is not supported by the Parallel STL
+BabelStream
+Version: 4.0
+Implementation: STD (index-oriented)
+Running kernels 100 times
+Precision: double
+Array size: 4295.0 MB (=4.3 GB)
+Total size: 12884.9 MB (=12.9 GB)
+Backing storage typeid: Pd
+Function    MBytes/sec  Min (sec)   Max         Average     
+Copy        94024.655   0.09136     0.09246     0.09184     
+Mul         92773.908   0.09259     0.09387     0.09313     
+Add         106212.118  0.12131     0.12240     0.12176     
+Triad       105753.748  0.12184     0.12288     0.12236     
+Dot         131826.650  0.06516     0.06713     0.06559     
+<<<15<<<
+>>>16>>>
+Tue 16 Aug 10:45:40 GMT 2022
+Listing devices is not supported by the Parallel STL
+BabelStream
+Version: 4.0
+Implementation: STD (index-oriented)
+Running kernels 100 times
+Precision: double
+Array size: 4295.0 MB (=4.3 GB)
+Total size: 12884.9 MB (=12.9 GB)
+Backing storage typeid: Pd
+Function    MBytes/sec  Min (sec)   Max         Average     
+Copy        95516.539   0.08993     0.09080     0.09025     
+Mul         94260.080   0.09113     0.09213     0.09164     
+Add         107818.605  0.11951     0.12047     0.11989     
+Triad       107564.729  0.11979     0.12054     0.12022     
+Dot         137470.598  0.06249     0.06495     0.06328     
+<<<16<<<
+>>>17>>>
+Tue 16 Aug 10:46:34 GMT 2022
+Listing devices is not supported by the Parallel STL
+BabelStream
+Version: 4.0
+Implementation: STD (index-oriented)
+Running kernels 100 times
+Precision: double
+Array size: 4295.0 MB (=4.3 GB)
+Total size: 12884.9 MB (=12.9 GB)
+Backing storage typeid: Pd
+Function    MBytes/sec  Min (sec)   Max         Average     
+Copy        96843.079   0.08870     0.08961     0.08896     
+Mul         95487.197   0.08996     0.09101     0.09050     
+Add         110368.238  0.11674     0.11849     0.11780     
+Triad       109556.209  0.11761     0.11913     0.11851     
+Dot         140000.348  0.06136     0.06265     0.06197     
+<<<17<<<
+>>>18>>>
+Tue 16 Aug 10:47:28 GMT 2022
+Listing devices is not supported by the Parallel STL
+BabelStream
+Version: 4.0
+Implementation: STD (index-oriented)
+Running kernels 100 times
+Precision: double
+Array size: 4295.0 MB (=4.3 GB)
+Total size: 12884.9 MB (=12.9 GB)
+Backing storage typeid: Pd
+Function    MBytes/sec  Min (sec)   Max         Average     
+Copy        97799.234   0.08783     0.08859     0.08821     
+Mul         97057.903   0.08850     0.08939     0.08888     
+Add         111635.913  0.11542     0.11686     0.11593     
+Triad       110834.821  0.11625     0.11737     0.11655     
+Dot         143305.196  0.05994     0.06133     0.06090     
+<<<18<<<
+>>>19>>>
+Tue 16 Aug 10:48:21 GMT 2022
+Listing devices is not supported by the Parallel STL
+BabelStream
+Version: 4.0
+Implementation: STD (index-oriented)
+Running kernels 100 times
+Precision: double
+Array size: 4295.0 MB (=4.3 GB)
+Total size: 12884.9 MB (=12.9 GB)
+Backing storage typeid: Pd
+Function    MBytes/sec  Min (sec)   Max         Average     
+Copy        99464.596   0.08636     0.08744     0.08695     
+Mul         98061.645   0.08760     0.08834     0.08790     
+Add         113026.725  0.11400     0.11500     0.11440     
+Triad       112962.395  0.11406     0.11516     0.11460     
+Dot         145573.819  0.05901     0.06112     0.06021     
+<<<19<<<
+>>>20>>>
+Tue 16 Aug 10:49:13 GMT 2022
+Listing devices is not supported by the Parallel STL
+BabelStream
+Version: 4.0
+Implementation: STD (index-oriented)
+Running kernels 100 times
+Precision: double
+Array size: 4295.0 MB (=4.3 GB)
+Total size: 12884.9 MB (=12.9 GB)
+Backing storage typeid: Pd
+Function    MBytes/sec  Min (sec)   Max         Average     
+Copy        100266.048  0.08567     0.08657     0.08604     
+Mul         99243.636   0.08655     0.08787     0.08722     
+Add         113336.566  0.11369     0.11462     0.11425     
+Triad       113880.566  0.11314     0.11403     0.11368     
+Dot         146943.826  0.05846     0.06035     0.05994     
+<<<20<<<
+>>>21>>>
+Tue 16 Aug 10:50:05 GMT 2022
+Listing devices is not supported by the Parallel STL
+BabelStream
+Version: 4.0
+Implementation: STD (index-oriented)
+Running kernels 100 times
+Precision: double
+Array size: 4295.0 MB (=4.3 GB)
+Total size: 12884.9 MB (=12.9 GB)
+Backing storage typeid: Pd
+Function    MBytes/sec  Min (sec)   Max         Average     
+Copy        100208.792  0.08572     0.08682     0.08627     
+Mul         99995.488   0.08590     0.08689     0.08647     
+Add         114708.014  0.11233     0.11432     0.11327     
+Triad       113980.916  0.11304     0.11368     0.11341     
+Dot         146902.613  0.05847     0.06021     0.05978     
+<<<21<<<
+>>>22>>>
+Tue 16 Aug 10:50:57 GMT 2022
+Listing devices is not supported by the Parallel STL
+BabelStream
+Version: 4.0
+Implementation: STD (index-oriented)
+Running kernels 100 times
+Precision: double
+Array size: 4295.0 MB (=4.3 GB)
+Total size: 12884.9 MB (=12.9 GB)
+Backing storage typeid: Pd
+Function    MBytes/sec  Min (sec)   Max         Average     
+Copy        101536.520  0.08460     0.08565     0.08495     
+Mul         100050.185  0.08586     0.08659     0.08620     
+Add         115573.837  0.11149     0.11224     0.11197     
+Triad       115121.352  0.11192     0.11290     0.11239     
+Dot         149580.253  0.05743     0.05957     0.05886     
+<<<22<<<
+>>>23>>>
+Tue 16 Aug 10:51:49 GMT 2022
+Listing devices is not supported by the Parallel STL
+BabelStream
+Version: 4.0
+Implementation: STD (index-oriented)
+Running kernels 100 times
+Precision: double
+Array size: 4295.0 MB (=4.3 GB)
+Total size: 12884.9 MB (=12.9 GB)
+Backing storage typeid: Pd
+Function    MBytes/sec  Min (sec)   Max         Average     
+Copy        102392.649  0.08389     0.08467     0.08428     
+Mul         102214.013  0.08404     0.08501     0.08455     
+Add         117016.395  0.11011     0.11108     0.11060     
+Triad       117031.788  0.11010     0.11138     0.11094     
+Dot         154575.422  0.05557     0.05854     0.05786     
+<<<23<<<
+>>>24>>>
+Tue 16 Aug 10:52:39 GMT 2022
+Listing devices is not supported by the Parallel STL
+BabelStream
+Version: 4.0
+Implementation: STD (index-oriented)
+Running kernels 100 times
+Precision: double
+Array size: 4295.0 MB (=4.3 GB)
+Total size: 12884.9 MB (=12.9 GB)
+Backing storage typeid: Pd
+Function    MBytes/sec  Min (sec)   Max         Average     
+Copy        102673.887  0.08366     0.08425     0.08395     
+Mul         102306.503  0.08396     0.08476     0.08447     
+Add         117705.254  0.10947     0.11088     0.11019     
+Triad       117362.730  0.10979     0.11076     0.11037     
+Dot         157469.442  0.05455     0.05812     0.05705     
+<<<24<<<
+>>>25>>>
+Tue 16 Aug 10:53:30 GMT 2022
+Listing devices is not supported by the Parallel STL
+BabelStream
+Version: 4.0
+Implementation: STD (index-oriented)
+Running kernels 100 times
+Precision: double
+Array size: 4295.0 MB (=4.3 GB)
+Total size: 12884.9 MB (=12.9 GB)
+Backing storage typeid: Pd
+Function    MBytes/sec  Min (sec)   Max         Average     
+Copy        104096.772  0.08252     0.08381     0.08293     
+Mul         102765.263  0.08359     0.08460     0.08421     
+Add         119039.277  0.10824     0.10954     0.10878     
+Triad       118435.063  0.10879     0.11058     0.10972     
+Dot         160011.857  0.05368     0.05663     0.05591     
+<<<25<<<
+>>>26>>>
+Tue 16 Aug 10:54:20 GMT 2022
+Listing devices is not supported by the Parallel STL
+BabelStream
+Version: 4.0
+Implementation: STD (index-oriented)
+Running kernels 100 times
+Precision: double
+Array size: 4295.0 MB (=4.3 GB)
+Total size: 12884.9 MB (=12.9 GB)
+Backing storage typeid: Pd
+Function    MBytes/sec  Min (sec)   Max         Average     
+Copy        104378.303  0.08230     0.08297     0.08255     
+Mul         103824.309  0.08274     0.08361     0.08320     
+Add         119065.518  0.10822     0.10896     0.10849     
+Triad       119516.232  0.10781     0.10858     0.10816     
+Dot         161578.776  0.05316     0.05567     0.05527     
+<<<26<<<
+>>>27>>>
+Tue 16 Aug 10:55:10 GMT 2022
+Listing devices is not supported by the Parallel STL
+BabelStream
+Version: 4.0
+Implementation: STD (index-oriented)
+Running kernels 100 times
+Precision: double
+Array size: 4295.0 MB (=4.3 GB)
+Total size: 12884.9 MB (=12.9 GB)
+Backing storage typeid: Pd
+Function    MBytes/sec  Min (sec)   Max         Average     
+Copy        105821.737  0.08117     0.08169     0.08144     
+Mul         103782.831  0.08277     0.08333     0.08307     
+Add         121729.043  0.10585     0.10679     0.10631     
+Triad       121258.813  0.10626     0.10714     0.10652     
+Dot         164272.561  0.05229     0.05449     0.05414     
+<<<27<<<
+>>>28>>>
+Tue 16 Aug 10:55:59 GMT 2022
+Listing devices is not supported by the Parallel STL
+BabelStream
+Version: 4.0
+Implementation: STD (index-oriented)
+Running kernels 100 times
+Precision: double
+Array size: 4295.0 MB (=4.3 GB)
+Total size: 12884.9 MB (=12.9 GB)
+Backing storage typeid: Pd
+Function    MBytes/sec  Min (sec)   Max         Average     
+Copy        107111.235  0.08020     0.08114     0.08075     
+Mul         105007.500  0.08180     0.08244     0.08210     
+Add         124644.862  0.10337     0.10471     0.10368     
+Triad       123842.560  0.10404     0.10520     0.10435     
+Dot         165647.150  0.05186     0.05346     0.05312     
+<<<28<<<
+>>>29>>>
+Tue 16 Aug 10:56:47 GMT 2022
+Listing devices is not supported by the Parallel STL
+BabelStream
+Version: 4.0
+Implementation: STD (index-oriented)
+Running kernels 100 times
+Precision: double
+Array size: 4295.0 MB (=4.3 GB)
+Total size: 12884.9 MB (=12.9 GB)
+Backing storage typeid: Pd
+Function    MBytes/sec  Min (sec)   Max         Average     
+Copy        107931.557  0.07959     0.08028     0.07981     
+Mul         105821.166  0.08117     0.08168     0.08144     
+Add         128051.176  0.10062     0.10240     0.10107     
+Triad       128557.983  0.10023     0.10193     0.10055     
+Dot         166195.005  0.05169     0.05364     0.05323     
+<<<29<<<
+>>>30>>>
+Tue 16 Aug 10:57:34 GMT 2022
+Listing devices is not supported by the Parallel STL
+BabelStream
+Version: 4.0
+Implementation: STD (index-oriented)
+Running kernels 100 times
+Precision: double
+Array size: 4295.0 MB (=4.3 GB)
+Total size: 12884.9 MB (=12.9 GB)
+Backing storage typeid: Pd
+Function    MBytes/sec  Min (sec)   Max         Average     
+Copy        110496.948  0.07774     0.07938     0.07798     
+Mul         107014.081  0.08027     0.08141     0.08077     
+Add         132076.232  0.09756     0.09959     0.09820     
+Triad       131070.247  0.09831     0.10048     0.09885     
+Dot         167842.975  0.05118     0.05358     0.05263     
+<<<30<<<
+>>>31>>>
+Tue 16 Aug 10:58:21 GMT 2022
+Listing devices is not supported by the Parallel STL
+BabelStream
+Version: 4.0
+Implementation: STD (index-oriented)
+Running kernels 100 times
+Precision: double
+Array size: 4295.0 MB (=4.3 GB)
+Total size: 12884.9 MB (=12.9 GB)
+Backing storage typeid: Pd
+Function    MBytes/sec  Min (sec)   Max         Average     
+Copy        113307.558  0.07581     0.07678     0.07609     
+Mul         108634.642  0.07907     0.07974     0.07936     
+Add         136622.751  0.09431     0.09610     0.09468     
+Triad       137579.255  0.09365     0.09567     0.09412     
+Dot         168820.300  0.05088     0.05229     0.05194     
+<<<31<<<
+>>>32>>>
+Tue 16 Aug 10:59:07 GMT 2022
+Listing devices is not supported by the Parallel STL
+BabelStream
+Version: 4.0
+Implementation: STD (index-oriented)
+Running kernels 100 times
+Precision: double
+Array size: 4295.0 MB (=4.3 GB)
+Total size: 12884.9 MB (=12.9 GB)
+Backing storage typeid: Pd
+Function    MBytes/sec  Min (sec)   Max         Average     
+Copy        114968.634  0.07472     0.07725     0.07509     
+Mul         110894.433  0.07746     0.07973     0.07781     
+Add         140626.381  0.09163     0.09637     0.09206     
+Triad       141625.419  0.09098     0.09409     0.09133     
+Dot         170468.428  0.05039     0.05351     0.05166     
+<<<32<<<
+>>>33>>>
+Tue 16 Aug 10:59:51 GMT 2022
+Listing devices is not supported by the Parallel STL
+BabelStream
+Version: 4.0
+Implementation: STD (index-oriented)
+Running kernels 100 times
+Precision: double
+Array size: 4295.0 MB (=4.3 GB)
+Total size: 12884.9 MB (=12.9 GB)
+Backing storage typeid: Pd
+Function    MBytes/sec  Min (sec)   Max         Average     
+Copy        119807.959  0.07170     0.07322     0.07198     
+Mul         113548.863  0.07565     0.07758     0.07599     
+Add         144540.619  0.08914     0.09074     0.08946     
+Triad       144889.955  0.08893     0.09058     0.08924     
+Dot         175716.085  0.04889     0.05107     0.04997     
+<<<33<<<
+>>>34>>>
+Tue 16 Aug 11:00:35 GMT 2022
+Listing devices is not supported by the Parallel STL
+BabelStream
+Version: 4.0
+Implementation: STD (index-oriented)
+Running kernels 100 times
+Precision: double
+Array size: 4295.0 MB (=4.3 GB)
+Total size: 12884.9 MB (=12.9 GB)
+Backing storage typeid: Pd
+Function    MBytes/sec  Min (sec)   Max         Average     
+Copy        123298.623  0.06967     0.07107     0.07004     
+Mul         117560.508  0.07307     0.07381     0.07330     
+Add         149697.262  0.08607     0.08766     0.08643     
+Triad       149726.794  0.08606     0.08775     0.08640     
+Dot         181046.851  0.04745     0.04908     0.04873     
+<<<34<<<
+>>>35>>>
+Tue 16 Aug 11:01:17 GMT 2022
+Listing devices is not supported by the Parallel STL
+BabelStream
+Version: 4.0
+Implementation: STD (index-oriented)
+Running kernels 100 times
+Precision: double
+Array size: 4295.0 MB (=4.3 GB)
+Total size: 12884.9 MB (=12.9 GB)
+Backing storage typeid: Pd
+Function    MBytes/sec  Min (sec)   Max         Average     
+Copy        126563.269  0.06787     0.06920     0.06814     
+Mul         121828.659  0.07051     0.07135     0.07077     
+Add         154096.173  0.08362     0.08512     0.08392     
+Triad       154239.038  0.08354     0.08532     0.08384     
+Dot         185459.085  0.04632     0.04792     0.04761     
+<<<35<<<
+>>>36>>>
+Tue 16 Aug 11:01:59 GMT 2022
+Listing devices is not supported by the Parallel STL
+BabelStream
+Version: 4.0
+Implementation: STD (index-oriented)
+Running kernels 100 times
+Precision: double
+Array size: 4295.0 MB (=4.3 GB)
+Total size: 12884.9 MB (=12.9 GB)
+Backing storage typeid: Pd
+Function    MBytes/sec  Min (sec)   Max         Average     
+Copy        129742.243  0.06621     0.06739     0.06650     
+Mul         125208.930  0.06860     0.06955     0.06894     
+Add         157602.037  0.08176     0.08335     0.08206     
+Triad       157802.832  0.08165     0.08404     0.08201     
+Dot         189838.430  0.04525     0.04646     0.04611     
+<<<36<<<
+>>>37>>>
+Tue 16 Aug 11:02:39 GMT 2022
+Listing devices is not supported by the Parallel STL
+BabelStream
+Version: 4.0
+Implementation: STD (index-oriented)
+Running kernels 100 times
+Precision: double
+Array size: 4295.0 MB (=4.3 GB)
+Total size: 12884.9 MB (=12.9 GB)
+Backing storage typeid: Pd
+Function    MBytes/sec  Min (sec)   Max         Average     
+Copy        134609.678  0.06381     0.06504     0.06409     
+Mul         127693.781  0.06727     0.06805     0.06752     
+Add         162482.320  0.07930     0.08115     0.07961     
+Triad       162640.380  0.07922     0.08095     0.07946     
+Dot         196613.169  0.04369     0.04541     0.04511     
+<<<37<<<
+>>>38>>>
+Tue 16 Aug 11:03:19 GMT 2022
+Listing devices is not supported by the Parallel STL
+BabelStream
+Version: 4.0
+Implementation: STD (index-oriented)
+Running kernels 100 times
+Precision: double
+Array size: 4295.0 MB (=4.3 GB)
+Total size: 12884.9 MB (=12.9 GB)
+Backing storage typeid: Pd
+Function    MBytes/sec  Min (sec)   Max         Average     
+Copy        137221.263  0.06260     0.06385     0.06287     
+Mul         131640.901  0.06525     0.06603     0.06549     
+Add         166798.403  0.07725     0.07916     0.07766     
+Triad       167345.027  0.07700     0.07834     0.07732     
+Dot         201391.747  0.04265     0.04362     0.04334     
+<<<38<<<
+>>>39>>>
+Tue 16 Aug 11:03:57 GMT 2022
+Listing devices is not supported by the Parallel STL
+BabelStream
+Version: 4.0
+Implementation: STD (index-oriented)
+Running kernels 100 times
+Precision: double
+Array size: 4295.0 MB (=4.3 GB)
+Total size: 12884.9 MB (=12.9 GB)
+Backing storage typeid: Pd
+Function    MBytes/sec  Min (sec)   Max         Average     
+Copy        141578.479  0.06067     0.06242     0.06093     
+Mul         134596.371  0.06382     0.06474     0.06431     
+Add         172224.670  0.07481     0.07695     0.07521     
+Triad       172564.984  0.07467     0.07670     0.07516     
+Dot         207847.822  0.04133     0.04450     0.04235     
+<<<39<<<
+>>>40>>>
+Tue 16 Aug 11:04:35 GMT 2022
+Listing devices is not supported by the Parallel STL
+BabelStream
+Version: 4.0
+Implementation: STD (index-oriented)
+Running kernels 100 times
+Precision: double
+Array size: 4295.0 MB (=4.3 GB)
+Total size: 12884.9 MB (=12.9 GB)
+Backing storage typeid: Pd
+Function    MBytes/sec  Min (sec)   Max         Average     
+Copy        144093.326  0.05961     0.06072     0.05980     
+Mul         138705.239  0.06193     0.06261     0.06216     
+Add         175590.190  0.07338     0.07499     0.07369     
+Triad       174637.217  0.07378     0.07526     0.07414     
+Dot         212028.752  0.04051     0.04181     0.04138     
+<<<40<<<
+>>>41>>>
+Tue 16 Aug 11:05:12 GMT 2022
+Listing devices is not supported by the Parallel STL
+BabelStream
+Version: 4.0
+Implementation: STD (index-oriented)
+Running kernels 100 times
+Precision: double
+Array size: 4295.0 MB (=4.3 GB)
+Total size: 12884.9 MB (=12.9 GB)
+Backing storage typeid: Pd
+Function    MBytes/sec  Min (sec)   Max         Average     
+Copy        148666.438  0.05778     0.06091     0.05811     
+Mul         141730.819  0.06061     0.06295     0.06090     
+Add         180005.480  0.07158     0.07366     0.07194     
+Triad       180271.422  0.07148     0.07360     0.07181     
+Dot         217520.881  0.03949     0.04223     0.04040     
+<<<41<<<
+>>>42>>>
+Tue 16 Aug 11:05:49 GMT 2022
+Listing devices is not supported by the Parallel STL
+BabelStream
+Version: 4.0
+Implementation: STD (index-oriented)
+Running kernels 100 times
+Precision: double
+Array size: 4295.0 MB (=4.3 GB)
+Total size: 12884.9 MB (=12.9 GB)
+Backing storage typeid: Pd
+Function    MBytes/sec  Min (sec)   Max         Average     
+Copy        151929.804  0.05654     0.05782     0.05674     
+Mul         144964.435  0.05926     0.06099     0.05951     
+Add         185095.589  0.06961     0.07149     0.06997     
+Triad       184541.409  0.06982     0.07213     0.07012     
+Dot         222348.774  0.03863     0.04096     0.03942     
+<<<42<<<
+>>>43>>>
+Tue 16 Aug 11:06:24 GMT 2022
+Listing devices is not supported by the Parallel STL
+BabelStream
+Version: 4.0
+Implementation: STD (index-oriented)
+Running kernels 100 times
+Precision: double
+Array size: 4295.0 MB (=4.3 GB)
+Total size: 12884.9 MB (=12.9 GB)
+Backing storage typeid: Pd
+Function    MBytes/sec  Min (sec)   Max         Average     
+Copy        156240.628  0.05498     0.05599     0.05519     
+Mul         145919.959  0.05887     0.05964     0.05912     
+Add         189231.539  0.06809     0.06948     0.06848     
+Triad       188831.547  0.06823     0.06963     0.06849     
+Dot         227799.082  0.03771     0.03884     0.03843     
+<<<43<<<
+>>>44>>>
+Tue 16 Aug 11:06:59 GMT 2022
+Listing devices is not supported by the Parallel STL
+BabelStream
+Version: 4.0
+Implementation: STD (index-oriented)
+Running kernels 100 times
+Precision: double
+Array size: 4295.0 MB (=4.3 GB)
+Total size: 12884.9 MB (=12.9 GB)
+Backing storage typeid: Pd
+Function    MBytes/sec  Min (sec)   Max         Average     
+Copy        159420.544  0.05388     0.05507     0.05416     
+Mul         152419.863  0.05636     0.05825     0.05654     
+Add         193719.010  0.06651     0.06815     0.06683     
+Triad       193505.388  0.06659     0.06913     0.06690     
+Dot         233880.968  0.03673     0.03894     0.03775     
+<<<44<<<
+>>>45>>>
+Tue 16 Aug 11:07:33 GMT 2022
+Listing devices is not supported by the Parallel STL
+BabelStream
+Version: 4.0
+Implementation: STD (index-oriented)
+Running kernels 100 times
+Precision: double
+Array size: 4295.0 MB (=4.3 GB)
+Total size: 12884.9 MB (=12.9 GB)
+Backing storage typeid: Pd
+Function    MBytes/sec  Min (sec)   Max         Average     
+Copy        163577.583  0.05251     0.05376     0.05277     
+Mul         155076.728  0.05539     0.05610     0.05564     
+Add         199072.906  0.06472     0.06606     0.06518     
+Triad       199011.544  0.06474     0.06596     0.06497     
+Dot         238425.826  0.03603     0.03728     0.03678     
+<<<45<<<
+>>>46>>>
+Tue 16 Aug 11:08:07 GMT 2022
+Listing devices is not supported by the Parallel STL
+BabelStream
+Version: 4.0
+Implementation: STD (index-oriented)
+Running kernels 100 times
+Precision: double
+Array size: 4295.0 MB (=4.3 GB)
+Total size: 12884.9 MB (=12.9 GB)
+Backing storage typeid: Pd
+Function    MBytes/sec  Min (sec)   Max         Average     
+Copy        166363.326  0.05163     0.05339     0.05185     
+Mul         159402.954  0.05389     0.05477     0.05409     
+Add         202379.977  0.06367     0.06518     0.06394     
+Triad       202039.843  0.06377     0.06494     0.06403     
+Dot         244461.714  0.03514     0.03676     0.03596     
+<<<46<<<
+>>>47>>>
+Tue 16 Aug 11:08:40 GMT 2022
+Listing devices is not supported by the Parallel STL
+BabelStream
+Version: 4.0
+Implementation: STD (index-oriented)
+Running kernels 100 times
+Precision: double
+Array size: 4295.0 MB (=4.3 GB)
+Total size: 12884.9 MB (=12.9 GB)
+Backing storage typeid: Pd
+Function    MBytes/sec  Min (sec)   Max         Average     
+Copy        169986.083  0.05053     0.05146     0.05074     
+Mul         162363.634  0.05291     0.05355     0.05310     
+Add         205196.446  0.06279     0.06398     0.06307     
+Triad       206706.583  0.06233     0.06363     0.06262     
+Dot         248121.063  0.03462     0.03614     0.03570     
+<<<47<<<
+>>>48>>>
+Tue 16 Aug 11:09:13 GMT 2022
+Listing devices is not supported by the Parallel STL
+BabelStream
+Version: 4.0
+Implementation: STD (index-oriented)
+Running kernels 100 times
+Precision: double
+Array size: 4295.0 MB (=4.3 GB)
+Total size: 12884.9 MB (=12.9 GB)
+Backing storage typeid: Pd
+Function    MBytes/sec  Min (sec)   Max         Average     
+Copy        173116.573  0.04962     0.05048     0.04982     
+Mul         166440.561  0.05161     0.05349     0.05195     
+Add         209466.779  0.06151     0.06285     0.06181     
+Triad       210745.658  0.06114     0.06448     0.06146     
+Dot         254992.567  0.03369     0.03626     0.03463     
+<<<48<<<
+>>>49>>>
+Tue 16 Aug 11:09:45 GMT 2022
+Listing devices is not supported by the Parallel STL
+BabelStream
+Version: 4.0
+Implementation: STD (index-oriented)
+Running kernels 100 times
+Precision: double
+Array size: 4295.0 MB (=4.3 GB)
+Total size: 12884.9 MB (=12.9 GB)
+Backing storage typeid: Pd
+Function    MBytes/sec  Min (sec)   Max         Average     
+Copy        177562.803  0.04838     0.04919     0.04857     
+Mul         167851.345  0.05118     0.05276     0.05139     
+Add         215180.235  0.05988     0.06235     0.06018     
+Triad       215654.210  0.05975     0.06161     0.06011     
+Dot         260356.859  0.03299     0.03557     0.03395     
+<<<49<<<
+>>>50>>>
+Tue 16 Aug 11:10:16 GMT 2022
+Listing devices is not supported by the Parallel STL
+BabelStream
+Version: 4.0
+Implementation: STD (index-oriented)
+Running kernels 100 times
+Precision: double
+Array size: 4295.0 MB (=4.3 GB)
+Total size: 12884.9 MB (=12.9 GB)
+Backing storage typeid: Pd
+Function    MBytes/sec  Min (sec)   Max         Average     
+Copy        180530.592  0.04758     0.04843     0.04777     
+Mul         171474.916  0.05009     0.05089     0.05036     
+Add         218865.599  0.05887     0.06012     0.05918     
+Triad       217463.656  0.05925     0.06053     0.05952     
+Dot         266242.648  0.03226     0.03313     0.03297     
+<<<50<<<
+>>>51>>>
+Tue 16 Aug 11:10:48 GMT 2022
+Listing devices is not supported by the Parallel STL
+BabelStream
+Version: 4.0
+Implementation: STD (index-oriented)
+Running kernels 100 times
+Precision: double
+Array size: 4295.0 MB (=4.3 GB)
+Total size: 12884.9 MB (=12.9 GB)
+Backing storage typeid: Pd
+Function    MBytes/sec  Min (sec)   Max         Average     
+Copy        185527.352  0.04630     0.04716     0.04652     
+Mul         176451.535  0.04868     0.04930     0.04887     
+Add         224466.429  0.05740     0.05866     0.05766     
+Triad       225266.351  0.05720     0.05830     0.05748     
+Dot         270947.606  0.03170     0.03286     0.03235     
+<<<51<<<
+>>>52>>>
+Tue 16 Aug 11:11:18 GMT 2022
+Listing devices is not supported by the Parallel STL
+BabelStream
+Version: 4.0
+Implementation: STD (index-oriented)
+Running kernels 100 times
+Precision: double
+Array size: 4295.0 MB (=4.3 GB)
+Total size: 12884.9 MB (=12.9 GB)
+Backing storage typeid: Pd
+Function    MBytes/sec  Min (sec)   Max         Average     
+Copy        188749.678  0.04551     0.04626     0.04566     
+Mul         179156.177  0.04795     0.05047     0.04819     
+Add         227371.632  0.05667     0.05817     0.05699     
+Triad       227043.185  0.05675     0.05963     0.05709     
+Dot         274414.064  0.03130     0.03406     0.03190     
+<<<52<<<
+>>>53>>>
+Tue 16 Aug 11:11:48 GMT 2022
+Listing devices is not supported by the Parallel STL
+BabelStream
+Version: 4.0
+Implementation: STD (index-oriented)
+Running kernels 100 times
+Precision: double
+Array size: 4295.0 MB (=4.3 GB)
+Total size: 12884.9 MB (=12.9 GB)
+Backing storage typeid: Pd
+Function    MBytes/sec  Min (sec)   Max         Average     
+Copy        192855.210  0.04454     0.04545     0.04482     
+Mul         181930.731  0.04722     0.04878     0.04737     
+Add         233927.699  0.05508     0.05698     0.05539     
+Triad       232538.573  0.05541     0.05682     0.05567     
+Dot         281070.414  0.03056     0.03295     0.03132     
+<<<53<<<
+>>>54>>>
+Tue 16 Aug 11:12:18 GMT 2022
+Listing devices is not supported by the Parallel STL
+BabelStream
+Version: 4.0
+Implementation: STD (index-oriented)
+Running kernels 100 times
+Precision: double
+Array size: 4295.0 MB (=4.3 GB)
+Total size: 12884.9 MB (=12.9 GB)
+Backing storage typeid: Pd
+Function    MBytes/sec  Min (sec)   Max         Average     
+Copy        195412.072  0.04396     0.04469     0.04417     
+Mul         185796.805  0.04623     0.04732     0.04665     
+Add         236173.307  0.05456     0.05565     0.05482     
+Triad       235854.220  0.05463     0.05620     0.05507     
+Dot         285997.585  0.03003     0.03118     0.03074     
+<<<54<<<
+>>>55>>>
+Tue 16 Aug 11:12:47 GMT 2022
+Listing devices is not supported by the Parallel STL
+BabelStream
+Version: 4.0
+Implementation: STD (index-oriented)
+Running kernels 100 times
+Precision: double
+Array size: 4295.0 MB (=4.3 GB)
+Total size: 12884.9 MB (=12.9 GB)
+Backing storage typeid: Pd
+Function    MBytes/sec  Min (sec)   Max         Average     
+Copy        197011.367  0.04360     0.04432     0.04379     
+Mul         189696.634  0.04528     0.04580     0.04542     
+Add         240939.000  0.05348     0.05457     0.05374     
+Triad       242755.084  0.05308     0.05425     0.05339     
+Dot         290606.862  0.02956     0.03092     0.03027     
+<<<55<<<
+>>>56>>>
+Tue 16 Aug 11:13:16 GMT 2022
+Listing devices is not supported by the Parallel STL
+BabelStream
+Version: 4.0
+Implementation: STD (index-oriented)
+Running kernels 100 times
+Precision: double
+Array size: 4295.0 MB (=4.3 GB)
+Total size: 12884.9 MB (=12.9 GB)
+Backing storage typeid: Pd
+Function    MBytes/sec  Min (sec)   Max         Average     
+Copy        202116.917  0.04250     0.04343     0.04274     
+Mul         194727.739  0.04411     0.04593     0.04433     
+Add         246250.130  0.05232     0.05395     0.05266     
+Triad       247308.466  0.05210     0.05409     0.05238     
+Dot         295215.253  0.02910     0.03228     0.02979     
+<<<56<<<
+>>>57>>>
+Tue 16 Aug 11:13:45 GMT 2022
+Listing devices is not supported by the Parallel STL
+BabelStream
+Version: 4.0
+Implementation: STD (index-oriented)
+Running kernels 100 times
+Precision: double
+Array size: 4295.0 MB (=4.3 GB)
+Total size: 12884.9 MB (=12.9 GB)
+Backing storage typeid: Pd
+Function    MBytes/sec  Min (sec)   Max         Average     
+Copy        208018.408  0.04129     0.04212     0.04150     
+Mul         194461.891  0.04417     0.04491     0.04433     
+Add         251156.770  0.05130     0.05281     0.05160     
+Triad       249510.360  0.05164     0.05282     0.05199     
+Dot         300960.112  0.02854     0.02973     0.02930     
+<<<57<<<
+>>>58>>>
+Tue 16 Aug 11:14:13 GMT 2022
+Listing devices is not supported by the Parallel STL
+BabelStream
+Version: 4.0
+Implementation: STD (index-oriented)
+Running kernels 100 times
+Precision: double
+Array size: 4295.0 MB (=4.3 GB)
+Total size: 12884.9 MB (=12.9 GB)
+Backing storage typeid: Pd
+Function    MBytes/sec  Min (sec)   Max         Average     
+Copy        210536.663  0.04080     0.04148     0.04096     
+Mul         199146.676  0.04313     0.04364     0.04329     
+Add         254426.932  0.05064     0.05166     0.05083     
+Triad       255488.568  0.05043     0.05145     0.05063     
+Dot         308292.072  0.02786     0.02872     0.02844     
+<<<58<<<
+>>>59>>>
+Tue 16 Aug 11:14:41 GMT 2022
+Listing devices is not supported by the Parallel STL
+BabelStream
+Version: 4.0
+Implementation: STD (index-oriented)
+Running kernels 100 times
+Precision: double
+Array size: 4295.0 MB (=4.3 GB)
+Total size: 12884.9 MB (=12.9 GB)
+Backing storage typeid: Pd
+Function    MBytes/sec  Min (sec)   Max         Average     
+Copy        212623.896  0.04040     0.04121     0.04055     
+Mul         202693.116  0.04238     0.04301     0.04262     
+Add         257411.657  0.05006     0.05093     0.05027     
+Triad       261429.293  0.04929     0.05032     0.04958     
+Dot         311908.843  0.02754     0.02858     0.02822     
+<<<59<<<
+>>>60>>>
+Tue 16 Aug 11:15:08 GMT 2022
+Listing devices is not supported by the Parallel STL
+BabelStream
+Version: 4.0
+Implementation: STD (index-oriented)
+Running kernels 100 times
+Precision: double
+Array size: 4295.0 MB (=4.3 GB)
+Total size: 12884.9 MB (=12.9 GB)
+Backing storage typeid: Pd
+Function    MBytes/sec  Min (sec)   Max         Average     
+Copy        216164.730  0.03974     0.04174     0.04001     
+Mul         208310.695  0.04124     0.04366     0.04150     
+Add         259535.210  0.04965     0.05102     0.04988     
+Triad       260208.193  0.04952     0.05176     0.04980     
+Dot         315127.608  0.02726     0.02939     0.02784     
+<<<60<<<
+>>>61>>>
+Tue 16 Aug 11:15:35 GMT 2022
+Listing devices is not supported by the Parallel STL
+BabelStream
+Version: 4.0
+Implementation: STD (index-oriented)
+Running kernels 100 times
+Precision: double
+Array size: 4295.0 MB (=4.3 GB)
+Total size: 12884.9 MB (=12.9 GB)
+Backing storage typeid: Pd
+Function    MBytes/sec  Min (sec)   Max         Average     
+Copy        220959.287  0.03888     0.03967     0.03908     
+Mul         210907.771  0.04073     0.04232     0.04086     
+Add         266048.650  0.04843     0.04927     0.04863     
+Triad       265306.241  0.04857     0.04910     0.04877     
+Dot         324997.848  0.02643     0.02731     0.02710     
+<<<61<<<
+>>>62>>>
+Tue 16 Aug 11:16:02 GMT 2022
+Listing devices is not supported by the Parallel STL
+BabelStream
+Version: 4.0
+Implementation: STD (index-oriented)
+Running kernels 100 times
+Precision: double
+Array size: 4295.0 MB (=4.3 GB)
+Total size: 12884.9 MB (=12.9 GB)
+Backing storage typeid: Pd
+Function    MBytes/sec  Min (sec)   Max         Average     
+Copy        225794.930  0.03804     0.03904     0.03821     
+Mul         215087.886  0.03994     0.04136     0.04014     
+Add         268862.286  0.04792     0.04928     0.04812     
+Triad       269862.285  0.04775     0.04917     0.04792     
+Dot         324937.141  0.02644     0.02835     0.02688     
+<<<62<<<
+>>>63>>>
+Tue 16 Aug 11:16:28 GMT 2022
+Listing devices is not supported by the Parallel STL
+BabelStream
+Version: 4.0
+Implementation: STD (index-oriented)
+Running kernels 100 times
+Precision: double
+Array size: 4295.0 MB (=4.3 GB)
+Total size: 12884.9 MB (=12.9 GB)
+Backing storage typeid: Pd
+Function    MBytes/sec  Min (sec)   Max         Average     
+Copy        226883.741  0.03786     0.03824     0.03799     
+Mul         216341.209  0.03971     0.04033     0.03992     
+Add         273420.104  0.04712     0.04774     0.04735     
+Triad       274243.487  0.04698     0.04769     0.04722     
+Dot         330507.756  0.02599     0.02697     0.02659     
+<<<63<<<
+>>>64>>>
+Tue 16 Aug 11:16:55 GMT 2022
+Listing devices is not supported by the Parallel STL
+BabelStream
+Version: 4.0
+Implementation: STD (index-oriented)
+Running kernels 100 times
+Precision: double
+Array size: 4295.0 MB (=4.3 GB)
+Total size: 12884.9 MB (=12.9 GB)
+Backing storage typeid: Pd
+Function    MBytes/sec  Min (sec)   Max         Average     
+Copy        229664.746  0.03740     0.03776     0.03756     
+Mul         218383.272  0.03933     0.03973     0.03947     
+Add         274925.766  0.04687     0.04752     0.04713     
+Triad       274366.558  0.04696     0.04761     0.04716     
+Dot         336385.296  0.02554     0.02625     0.02604     
+<<<64<<<

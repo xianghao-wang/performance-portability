@@ -1,0 +1,41 @@
+#!/bin/bash
+#PBS -q arm
+#PBS -l select=1:ncpus=64
+#PBS -l walltime=01:00:00
+#PBS -joe
+
+cd "$RUN_DIR" || exit 2
+
+export OMP_NUM_THREADS=64
+date
+
+case "$MODEL" in
+    julia-*)
+        # XXX don't use `aprun -n 1 -d 64 -cc none` here
+        # we're getting:
+        # ERROR: could not load library "<...>/../lib/julia/sys.so"
+        # <...>/../lib/julia/sys.so: cannot open shared object file: No such file or directory
+        export JULIA_EXCLUSIVE=1 # pin threads
+        export JULIA_NUM_THREADS=64
+        params=( -n 65536 -i 8 --deck ../data/bm1 )
+        julia --project="$JULIA_BACKEND" -e 'import Pkg; Pkg.instantiate()'
+
+        aprun -n 1 -d 64 \
+            julia -H "$(dirname "$(which julia)")" --project="$JULIA_BACKEND" "./$BENCHMARK_EXE" "${params[@]}" --wgsize 512
+        ;;
+    omp)
+        if [[ "$COMPILER" =~ (arm|llvm)- ]]; then
+            OMP_PROC_BIND=true aprun -n 1 -d 64 -cc none "./$BENCHMARK_EXE"
+        else
+            aprun -n 1 -d 64 "./$BENCHMARK_EXE"
+        fi
+        ;;
+    sycl|kokkos)
+        OMP_PLACES=cores OMP_PROC_BIND=spread aprun -n 1 -d 64 -cc none "./$BENCHMARK_EXE" --deck "$SRC_DIR/../data/bm1"
+        ;;
+    *)
+        echo "Unknown run configuration for model '$MODEL'"
+        exit 1
+        ;;
+esac
+

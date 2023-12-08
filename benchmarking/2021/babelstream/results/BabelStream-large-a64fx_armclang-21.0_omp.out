@@ -1,0 +1,15 @@
+WARNING: Did not unuse /opt/cray/pe/craype/2.7.0/modulefiles
+Thu Sep  2 11:06:31 CDT 2021
+BabelStream
+Version: 3.4
+Implementation: OpenMP
+Running kernels 100 times
+Precision: double
+Array size: 4295.0 MB (=4.3 GB)
+Total size: 12884.9 MB (=12.9 GB)
+Function    MBytes/sec  Min (sec)   Max         Average     
+Copy        550807.018  0.01560     0.01588     0.01563     
+Mul         549713.561  0.01563     0.04441     0.01597     
+Add         607122.698  0.02122     0.05260     0.02174     
+Triad       602543.989  0.02138     0.05268     0.02203     
+Dot         858118.522  0.01001     0.03189     0.01035     

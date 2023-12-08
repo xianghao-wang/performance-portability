@@ -1,0 +1,232 @@
+Fri Aug 19 10:34:26 UTC 2022
+/home/tomlin/performance-portability/benchmarking/2022/bude/results/miniBUDE-graviton2_nvhpc-22.7_omp
+	linux-vdso.so.1 (0x0000ffff9891b000)
+	libacchost.so => /home/tomlin/spack/opt/spack/linux-amzn2-graviton2/gcc-12.1.0/nvhpc-22.7-3nuivm2zn2y62nupn6oaowziqndwox5p/Linux_aarch64/22.7/compilers/lib/libacchost.so (0x0000ffff9886b000)
+	libdl.so.2 => /lib64/libdl.so.2 (0x0000ffff9884a000)
+	libatomic.so.1 => /lustre/spack/opt/spack/linux-amzn2-graviton2/gcc-7.3.1/gcc-12.1.0-24ohqeaxrtjf5d7t5oph2eva7tguampu/bin/../lib/gcc/aarch64-unknown-linux-gnu/12.1.0/../../../../lib64/libatomic.so.1 (0x0000ffff98828000)
+	libnvhpcatm.so => /home/tomlin/spack/opt/spack/linux-amzn2-graviton2/gcc-12.1.0/nvhpc-22.7-3nuivm2zn2y62nupn6oaowziqndwox5p/Linux_aarch64/22.7/compilers/lib/libnvhpcatm.so (0x0000ffff98803000)
+	libstdc++.so.6 => /lustre/spack/opt/spack/linux-amzn2-graviton2/gcc-7.3.1/gcc-12.1.0-24ohqeaxrtjf5d7t5oph2eva7tguampu/bin/../lib/gcc/aarch64-unknown-linux-gnu/12.1.0/../../../../lib64/libstdc++.so.6 (0x0000ffff985dd000)
+	libnvomp.so => /home/tomlin/spack/opt/spack/linux-amzn2-graviton2/gcc-12.1.0/nvhpc-22.7-3nuivm2zn2y62nupn6oaowziqndwox5p/Linux_aarch64/22.7/compilers/lib/libnvomp.so (0x0000ffff983f1000)
+	libpthread.so.0 => /lib64/libpthread.so.0 (0x0000ffff983bc000)
+	libnvcpumath.so => /home/tomlin/spack/opt/spack/linux-amzn2-graviton2/gcc-12.1.0/nvhpc-22.7-3nuivm2zn2y62nupn6oaowziqndwox5p/Linux_aarch64/22.7/compilers/lib/libnvcpumath.so (0x0000ffff98277000)
+	libnvc.so => /home/tomlin/spack/opt/spack/linux-amzn2-graviton2/gcc-12.1.0/nvhpc-22.7-3nuivm2zn2y62nupn6oaowziqndwox5p/Linux_aarch64/22.7/compilers/lib/libnvc.so (0x0000ffff98121000)
+	libgcc_s.so.1 => /lustre/spack/opt/spack/linux-amzn2-graviton2/gcc-7.3.1/gcc-12.1.0-24ohqeaxrtjf5d7t5oph2eva7tguampu/bin/../lib/gcc/aarch64-unknown-linux-gnu/12.1.0/../../../../lib64/libgcc_s.so.1 (0x0000ffff980f0000)
+	libc.so.6 => /lib64/libc.so.6 (0x0000ffff97f6a000)
+	libm.so.6 => /lib64/libm.so.6 (0x0000ffff97ea9000)
+	/lib/ld-linux-aarch64.so.1 (0x0000ffff988dd000)
+miniBUDE:  
+compile_commands:
+   - "/home/tomlin/spack/opt/spack/linux-amzn2-graviton2/gcc-12.1.0/nvhpc-22.7-3nuivm2zn2y62nupn6oaowziqndwox5p/Linux_aarch64/22.7/compilers/bin/nvc++ -DOMP -DUSE_PPWI=1,2,4,8,16,32,64,128 -I<SRC>/omp -I/home/tomlin/performance-portability/benchmarking/2022/bude/results/miniBUDE-graviton2_nvhpc-22.7_omp/miniBUDE/build/generated -fast  -DNDEBUG -O3 -march=native -target=multicore -mp -tp=neoverse-n1 -fast -Mx,15,0x8 --c++17 -o <OUT>/src/main.cpp.o -c <SRC>/main.cpp"
+vcs:
+  commit:  1f203a5f6006362350574d1003cf9b8505878edf
+  author:  "Tom Lin (tom91136@gmail.com)"
+  date:    "2022-08-19 10:30:02 +0000"
+  subject: "Add fixed NVHPC results for g3"
+host_cpu:
+  ~
+time: { epoch_s:1660905266, formatted: "Fri Aug 19 10:34:26 2022 GMT" }
+devices:
+  0: "OMP CPU"
+miniBUDE:  
+compile_commands:
+   - "/home/tomlin/spack/opt/spack/linux-amzn2-graviton2/gcc-12.1.0/nvhpc-22.7-3nuivm2zn2y62nupn6oaowziqndwox5p/Linux_aarch64/22.7/compilers/bin/nvc++ -DOMP -DUSE_PPWI=1,2,4,8,16,32,64,128 -I<SRC>/omp -I/home/tomlin/performance-portability/benchmarking/2022/bude/results/miniBUDE-graviton2_nvhpc-22.7_omp/miniBUDE/build/generated -fast  -DNDEBUG -O3 -march=native -target=multicore -mp -tp=neoverse-n1 -fast -Mx,15,0x8 --c++17 -o <OUT>/src/main.cpp.o -c <SRC>/main.cpp"
+vcs:
+  commit:  1f203a5f6006362350574d1003cf9b8505878edf
+  author:  "Tom Lin (tom91136@gmail.com)"
+  date:    "2022-08-19 10:30:02 +0000"
+  subject: "Add fixed NVHPC results for g3"
+host_cpu:
+  ~
+time: { epoch_s:1660905266, formatted: "Fri Aug 19 10:34:26 2022 GMT" }
+deck:
+  path:         "miniBUDE/data/bm1"
+  poses:        65536
+  proteins:     938
+  ligands:      26
+  forcefields:  34
+config:
+  iterations:   8
+  poses:        65536
+  ppwi:
+    available:  [1,2,4,8,16,32,64,128]
+    selected:   [1,2,4,8,16,32,64,128]
+  wgsize:       [1]
+device: { index: 0,  name: "OMP CPU" }
+# (ppwi=1,wgsize=1,valid=1)
+# (ppwi=2,wgsize=1,valid=1)
+# (ppwi=4,wgsize=1,valid=1)
+# (ppwi=8,wgsize=1,valid=1)
+# (ppwi=16,wgsize=1,valid=1)
+# (ppwi=32,wgsize=1,valid=1)
+# (ppwi=64,wgsize=1,valid=1)
+# (ppwi=128,wgsize=1,valid=1)
+results:
+  - outcome:             { valid: true, max_diff_%: 0.003 }
+    param:               { ppwi: 1, wgsize: 1 }
+    raw_iterations:      [348.274,348.229,348.3,348.068,348.187,348.236,348.108,348.33,348.122,348.054]
+    context_ms:          13.940804
+    sum_ms:              2785.404
+    avg_ms:              348.176
+    min_ms:              348.054
+    max_ms:              348.330
+    stddev_ms:           0.098
+    giga_interactions/s: 4.590
+    gflop/s:             183.722
+    gfinst/s:            114.762
+    energies:            
+      - 865.52
+      - 25.07
+      - 368.43
+      - 14.67
+      - 574.99
+      - 707.35
+      - 33.95
+      - 135.59
+  - outcome:             { valid: true, max_diff_%: 0.005 }
+    param:               { ppwi: 2, wgsize: 1 }
+    raw_iterations:      [236.381,236.239,236.227,236.226,238.835,236.232,236.25,236.632,236.43,236.358]
+    context_ms:          0.053169
+    sum_ms:              1893.189
+    avg_ms:              236.649
+    min_ms:              236.226
+    max_ms:              238.835
+    stddev_ms:           0.837
+    giga_interactions/s: 6.754
+    gflop/s:             236.530
+    gfinst/s:            168.847
+    energies:            
+      - 865.52
+      - 25.07
+      - 368.43
+      - 14.67
+      - 574.99
+      - 707.35
+      - 33.95
+      - 135.59
+  - outcome:             { valid: true, max_diff_%: 0.004 }
+    param:               { ppwi: 4, wgsize: 1 }
+    raw_iterations:      [125.151,125.013,124.973,154.003,124.911,125.178,125.214,125.016,124.906,125.055]
+    context_ms:          0.086785
+    sum_ms:              1029.256
+    avg_ms:              128.657
+    min_ms:              124.906
+    max_ms:              154.003
+    stddev_ms:           9.581
+    giga_interactions/s: 12.423
+    gflop/s:             404.003
+    gfinst/s:            310.572
+    energies:            
+      - 865.52
+      - 25.07
+      - 368.43
+      - 14.67
+      - 574.99
+      - 707.35
+      - 33.95
+      - 135.59
+  - outcome:             { valid: true, max_diff_%: 0.003 }
+    param:               { ppwi: 8, wgsize: 1 }
+    raw_iterations:      [289.181,289.288,296.668,289.165,289.245,289.138,289.646,289.365,289.258,289.316]
+    context_ms:          0.083241
+    sum_ms:              2321.803
+    avg_ms:              290.225
+    min_ms:              289.138
+    max_ms:              296.668
+    stddev_ms:           2.440
+    giga_interactions/s: 5.507
+    gflop/s:             172.209
+    gfinst/s:            137.677
+    energies:            
+      - 865.52
+      - 25.07
+      - 368.43
+      - 14.67
+      - 574.99
+      - 707.35
+      - 33.95
+      - 135.59
+  - outcome:             { valid: true, max_diff_%: 0.003 }
+    param:               { ppwi: 16, wgsize: 1 }
+    raw_iterations:      [285.889,286.067,285.963,285.891,285.889,285.926,285.846,285.979,286.026,285.899]
+    context_ms:          0.102350
+    sum_ms:              2287.419
+    avg_ms:              285.927
+    min_ms:              285.846
+    max_ms:              286.026
+    stddev_ms:           0.055
+    giga_interactions/s: 5.590
+    gflop/s:             171.304
+    gfinst/s:            139.746
+    energies:            
+      - 865.52
+      - 25.07
+      - 368.43
+      - 14.67
+      - 574.99
+      - 707.35
+      - 33.95
+      - 135.59
+  - outcome:             { valid: true, max_diff_%: 0.003 }
+    param:               { ppwi: 32, wgsize: 1 }
+    raw_iterations:      [283.791,283.757,284.004,283.824,283.866,284.024,283.877,283.753,283.797,283.941]
+    context_ms:          0.378214
+    sum_ms:              2271.086
+    avg_ms:              283.886
+    min_ms:              283.753
+    max_ms:              284.024
+    stddev_ms:           0.091
+    giga_interactions/s: 5.630
+    gflop/s:             170.776
+    gfinst/s:            140.751
+    energies:            
+      - 865.52
+      - 25.07
+      - 368.43
+      - 14.67
+      - 574.99
+      - 707.35
+      - 33.95
+      - 135.59
+  - outcome:             { valid: true, max_diff_%: 0.003 }
+    param:               { ppwi: 64, wgsize: 1 }
+    raw_iterations:      [283.35,283.487,283.409,283.411,283.355,283.428,286.189,283.263,283.275,283.407]
+    context_ms:          0.357939
+    sum_ms:              2269.737
+    avg_ms:              283.717
+    min_ms:              283.263
+    max_ms:              286.189
+    stddev_ms:           0.936
+    giga_interactions/s: 5.633
+    gflop/s:             169.997
+    gfinst/s:            140.835
+    energies:            
+      - 865.52
+      - 25.07
+      - 368.43
+      - 14.67
+      - 574.99
+      - 707.35
+      - 33.95
+      - 135.59
+  - outcome:             { valid: true, max_diff_%: 0.003 }
+    param:               { ppwi: 128, wgsize: 1 }
+    raw_iterations:      [282.616,283.23,282.66,282.849,282.614,282.631,282.762,282.719,282.752,282.685]
+    context_ms:          0.470957
+    sum_ms:              2261.674
+    avg_ms:              282.709
+    min_ms:              282.614
+    max_ms:              282.849
+    stddev_ms:           0.073
+    giga_interactions/s: 5.653
+    gflop/s:             170.161
+    gfinst/s:            141.337
+    energies:            
+      - 865.52
+      - 25.07
+      - 368.43
+      - 14.67
+      - 574.99
+      - 707.35
+      - 33.95
+      - 135.59
+best: { min_ms: 124.91, max_ms: 154.00, sum_ms: 1029.26, avg_ms: 128.66, ppwi: 4, wgsize: 1 }

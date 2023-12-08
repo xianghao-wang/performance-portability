@@ -1,0 +1,36 @@
+Fri 27 Aug 12:23:07 GMT 2021
+┌ Warning: HSA runtime has not been built, runtime functionality will be unavailable.
+│ Please run Pkg.build("AMDGPU") and reload AMDGPU.
+└ @ AMDGPU ~/.julia/packages/AMDGPU/Z873w/src/AMDGPU.jl:166
+┌ Warning: HIP library has not been built, runtime functionality will be unavailable.
+│ Please run Pkg.build("AMDGPU") and reload AMDGPU.
+└ @ AMDGPU ~/.julia/packages/AMDGPU/Z873w/src/AMDGPU.jl:187
+┌ Warning: ROCm-Device-Libs were not found, device intrinsics will be unavailable.
+│ Please run Pkg.build("AMDGPU") and reload AMDGPU.
+└ @ AMDGPU ~/.julia/packages/AMDGPU/Z873w/src/AMDGPU.jl:195
+[1] (cpu) Intel(R) Xeon(R) Gold 6230 CPU @ 2.10GHz (1T)
+[2] (cuda) Tesla V100-PCIE-16GB (CuDevice(0))
+┌ Warning: HSA runtime has not been built, runtime functionality will be unavailable.
+│ Please run Pkg.build("AMDGPU") and reload AMDGPU.
+└ @ AMDGPU ~/.julia/packages/AMDGPU/Z873w/src/AMDGPU.jl:166
+┌ Warning: HIP library has not been built, runtime functionality will be unavailable.
+│ Please run Pkg.build("AMDGPU") and reload AMDGPU.
+└ @ AMDGPU ~/.julia/packages/AMDGPU/Z873w/src/AMDGPU.jl:187
+┌ Warning: ROCm-Device-Libs were not found, device intrinsics will be unavailable.
+│ Please run Pkg.build("AMDGPU") and reload AMDGPU.
+└ @ AMDGPU ~/.julia/packages/AMDGPU/Z873w/src/AMDGPU.jl:195
+BabelStream
+Version: 3.4.0
+Implementation: Julia; ./src/KernelAbstractionsStream.jl
+Running kernels 100 times
+Precision: double
+Array size: 4295.0 MB(=4.3 GB)
+Total size: 12884.9 MB(=12.9 GB)
+Using CUDA device: Tesla V100-PCIE-16GB (CuDevice(0))
+Kernel parameters   : <<<536870912,1024>>>
+Function    MBytes/sec  Min (sec)   Max         Average     
+Copy        786838.41   0.01092     4.51152     0.05612     
+Mul         788306.489  0.0109      0.82111     0.01922     
+Add         831771.411  0.01549     0.75849     0.02314     
+Triad       832170.12   0.01548     0.80521     0.02362     
+Dot         867182.787  0.00991     2.28068     0.03302     

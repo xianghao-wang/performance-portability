@@ -1,0 +1,33 @@
+#!/bin/bash
+#PBS -q a64fx
+#PBS -l select=1:ncpus=48
+#PBS -l walltime=01:00:00
+#PBS -joe
+
+setup_env # Isambard 2 A64FX resets modules in PBS jobs, even when run with -V
+
+cd "$RUN_DIR" || exit 2
+
+export OMP_NUM_THREADS=48 OMP_PLACES=cores OMP_PROC_BIND=spread
+date
+
+case "$MODEL" in
+    julia-*)
+        export JULIA_EXCLUSIVE=1 # pin threads
+        export JULIA_NUM_THREADS=48
+        params=( -n 65536 -i 8 --deck ../data/bm1 )
+        # julia --project="$JULIA_BACKEND" -e 'import Pkg; Pkg.instantiate()'
+        julia --project="$JULIA_BACKEND" "./$BENCHMARK_EXE" "${params[@]}" --wgsize 128
+        ;;
+    omp)
+        "./$BENCHMARK_EXE"
+        ;;
+    sycl|kokkos)
+        "./$BENCHMARK_EXE" --deck "$SRC_DIR/../data/bm1"
+        ;;
+    *)
+        echo "Unknown run configuration for model '$MODEL'"
+        exit 1
+        ;;
+esac
+

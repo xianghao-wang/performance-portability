@@ -1,0 +1,43 @@
+#!/bin/bash
+#PBS -q clxq
+#PBS -l select=1:ncpus=40
+#PBS -l walltime=00:10:00
+#PBS -l place=excl
+#PBS -joe
+
+set -eu
+
+cd "$RUN_DIR" || exit 2
+
+export OMP_NUM_THREADS=40 OMP_PLACES=cores OMP_PROC_BIND=spread
+date
+
+params=( -n 65536 -i 8 --deck ../data/bm1 )
+
+case "$MODEL" in
+    julia-*)
+        export JULIA_EXCLUSIVE=1 # pin threads
+        export JULIA_NUM_THREADS=40
+        params=( -n 65536 -i 8 --deck ../data/bm1 )
+        julia --project="$JULIA_BACKEND" -e 'import Pkg; Pkg.instantiate()'
+        julia -O3 -C"native,prefer-512-bit" --check-bounds=no --project="$JULIA_BACKEND" "./$BENCHMARK_EXE" "${params[@]}" --wgsize 128
+        ;;
+    omp)
+        "./$BENCHMARK_EXE" "${params[@]}"
+        ;;
+    ocl)
+        "./$BENCHMARK_EXE" --help
+        "./$BENCHMARK_EXE" "${params[@]}" --device 1 --wgsize 16 --posesperwi 8
+    ;;
+    kokkos)
+        "./$BENCHMARK_EXE" "${params[@]}"
+        ;;
+    sycl)
+        "./$BENCHMARK_EXE" "${params[@]}" --device Xeon  --wgsize 32
+        ;;
+    *)
+        echo "Unknown run configuration for model '$MODEL'"
+        exit 1
+        ;;
+esac
+

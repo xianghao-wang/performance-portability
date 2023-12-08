@@ -1,0 +1,16 @@
+Sat 28 Aug 12:24:40 BST 2021
+BabelStream
+Version: 3.4.0
+Implementation: Julia; ./src/oneAPIStream.jl
+Running kernels 100 times
+Precision: double
+Array size: 268.4 MB(=0.3 GB)
+Total size: 805.3 MB(=0.8 GB)
+Using L0 device: ZeDevice(GPU, vendor 0x8086, device 0x193b): Intel(R) Iris(TM) Pro Graphics 580 [0x193b]
+Kernel parameters   : <<<33554432,256>>>
+Function    MBytes/sec  Min (sec)   Max         Average     
+Copy        31042.326   0.01729     7.82901     0.09582     
+Mul         26081.234   0.02058     0.73652     0.0281      
+Add         25618.01    0.03144     0.6307      0.03775     
+Triad       26498.664   0.03039     0.67273     0.03714     
+Dot         22781.827   0.02357     4.01299     0.06502     

@@ -1,0 +1,14 @@
+Tue 31 Aug 18:34:42 GMT 2021
+BabelStream
+Version: 3.4
+Implementation: Kokkos
+Running kernels 100 times
+Precision: double
+Array size: 4295.0 MB (=4.3 GB)
+Total size: 12884.9 MB (=12.9 GB)
+Function    MBytes/sec  Min (sec)   Max         Average     
+Copy        198647.319  0.04324     0.04908     0.04341     
+Mul         192808.714  0.04455     0.04664     0.04473     
+Add         214442.152  0.06009     0.07660     0.06046     
+Triad       215875.371  0.05969     0.06277     0.05994     
+Dot         313991.008  0.02736     0.04340     0.02767     

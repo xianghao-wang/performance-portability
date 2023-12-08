@@ -1,0 +1,98 @@
+Mon 11 Oct 13:38:46 UTC 2021
+xcimom2
+BabelStream
+Version: 3.4.0
+Implementation: Julia; ./src/ThreadedStream.jl
+Running kernels 100 times
+Precision: double
+Array size: 268.4 MB(=0.3 GB)
+Total size: 805.3 MB(=0.8 GB)
+Using max 64 threads
+	[0m.text
+[90m; ┌ @ ThreadedStream.jl:36 within `copy!'[39m
+	[96m[1msub[22m[39m	[0msp[0m, [0msp[0m, [33m#112[39m                    [90m// =112[39m
+	[96m[1mstp[22m[39m	[0mx30[0m, [0mx19[0m, [33m[[39m[0msp[0m, [33m#96[39m[33m][39m
+	[96m[1mmovi[22m[39m	[0mv0.2d[0m, [33m#0000000000000000[39m
+	[96m[1mmov[22m[39m	[0mw8[0m, [33m#12[39m
+	[96m[1mstr[22m[39m	[0mxzr[0m, [33m[[39m[0msp[0m, [33m#80[39m[33m][39m
+	[96m[1mmrs[22m[39m	[0mx19[0m, [0mTPIDR_EL0
+	[96m[1madd[22m[39m	[0mx9[0m, [0msp[0m, [33m#48[39m                     [90m// =48[39m
+	[96m[1mmov[22m[39m	[0mx10[0m, [33m#20256[39m
+	[96m[1mmovk[22m[39m	[0mx10[0m, [33m#38[39m[0m, [95mlsl[39m [33m#16[39m
+	[96m[1mmovk[22m[39m	[0mx10[0m, [33m#16384[39m[0m, [95mlsl[39m [33m#32[39m
+	[96m[1mstp[22m[39m	[0mq0[0m, [0mq0[0m, [33m[[39m[0msp[0m, [33m#48[39m[33m][39m
+[90m; │ @ ThreadedStream.jl:41 within `copy!'[39m
+	[96m[1mstr[22m[39m	[0mx8[0m, [33m[[39m[0msp[0m, [33m#48[39m[33m][39m
+	[96m[1mldr[22m[39m	[0mx8[0m, [33m[[39m[0mx19[0m, [33m#16[39m[33m][39m
+	[96m[1mstr[22m[39m	[0mx8[0m, [33m[[39m[0msp[0m, [33m#56[39m[33m][39m
+	[96m[1mstr[22m[39m	[0mx9[0m, [33m[[39m[0mx19[0m, [33m#16[39m[33m][39m
+	[96m[1mldr[22m[39m	[0mq0[0m, [33m[[39m[0mx0[33m][39m
+	[96m[1mldp[22m[39m	[0mx8[0m, [0mx9[0m, [33m[[39m[0mx0[0m, [33m#16[39m[33m][39m
+	[96m[1mldr[22m[39m	[0mx1[0m, [33m[[39m[0mx0[0m, [33m#32[39m[33m][39m
+[90m; │┌ @ threadingconstructs.jl:19 within `nthreads'[39m
+[90m; ││┌ @ pointer.jl:105 within `unsafe_load' @ pointer.jl:105[39m
+	[96m[1mldrsw[22m[39m	[0mx2[0m, [33m[[39m[0mx10[33m][39m
+[90m; │└└[39m
+	[96m[1mmov[22m[39m	[0mx0[0m, [0msp
+	[96m[1mstp[22m[39m	[0mx8[0m, [0mx9[0m, [33m[[39m[0msp[0m, [33m#16[39m[33m][39m
+	[96m[1mstur[22m[39m	[0mq0[0m, [33m[[39m[0msp[0m, [33m#72[39m[33m][39m
+	[96m[1mstr[22m[39m	[0mx8[0m, [33m[[39m[0msp[0m, [33m#64[39m[33m][39m
+	[96m[1mstr[22m[39m	[0mq0[0m, [33m[[39m[0msp[33m][39m
+	[96m[1mstr[22m[39m	[0mx1[0m, [33m[[39m[0msp[0m, [33m#32[39m[33m][39m
+	[96m[1mbl[22m[39m	[33m0x74[39m
+	[96m[1mldr[22m[39m	[0mx8[0m, [33m[[39m[0msp[0m, [33m#56[39m[33m][39m
+	[96m[1mstr[22m[39m	[0mx8[0m, [33m[[39m[0mx19[0m, [33m#16[39m[33m][39m
+	[96m[1mldp[22m[39m	[0mx30[0m, [0mx19[0m, [33m[[39m[0msp[0m, [33m#96[39m[33m][39m
+	[96m[1madd[22m[39m	[0msp[0m, [0msp[0m, [33m#112[39m                    [90m// =112[39m
+	[96m[1mret[22m[39m
+	[96m[1mnop[22m[39m
+[90m; └[39m
+Validation failed on a. Average error 0.09831296806411476
+Validation failed on b. Average error 0.19929707002671404
+Validation failed on c. Average error 0.09753974509350095
+Validation failed on sum. Error 1.0 
+Sum was 0.0 but should be 39.79103702713014
+Function    MBytes/sec  Min (sec)   Max         Average     
+Copy        150786.995  0.00356     0.03456     0.00401     
+Mul         Inf         0.0         0.0         0.0         
+Add         Inf         0.0         0.0         0.0         
+Triad       Inf         0.0         0.0         0.0         
+Dot         Inf         0.0         0.0         0.0         
+Application 1918571 exit codes: 1
+Application 1918571 resources: utime ~38s, stime ~53s, Rss ~1578716, inblocks ~591626, outblocks ~0
+============================= PBS epilogue =============================
+
+End of Job Report
+Run at 2021-10-11 13:39:13 for job 151781.xci00
+Submitted              : 2021-10-11 13:38:42
+Queued                 : 2021-10-11 13:38:42
+Started                : 2021-10-11 13:38:45
+Completed              : 2021-10-11 13:39:13
+Queued Time            : 0:00:03 (3 seconds)
+Elapsed Time           : 0:00:23 (23 seconds, 3% of limit)
+Walltime Limit         : 0:15:00 (900 seconds)
+Node Time Limit        : 0:15:00 (900 seconds)
+Node Time              : 0:00:23 (23 seconds, 3% of limit)
+Job Name               : babelstream
+Queue                  : arm
+Owner                  : br-wlin
+Group                  : -default-
+Project                : GW03
+Subproject             : 
+Funding                : 
+Trustzone              : 
+STDOUT                 : /home/br-wlin/performance-portability/benchmarking/2021/babelstream/results/BabelStream-tx2_julia-1.6.2_julia-threaded.out
+STDERR                 : /home/br-wlin/performance-portability/benchmarking/2021/babelstream/results/babelstream.e151781
+Job Directory          : /home/br-wlin/pbs.151781.xci00.x8z
+Job Arch               : XT
+CPU Core Type          : arm
+Total Nodes            : 1
+Total Tasks            : 64
+Parent Node            : xcimom2
+Parent Node Memory     : 
+Parent Node CPU Time   : 
+Compute Nodes          : 327
+Electrical Groups      : 1
+Run Version            : 1
+
+For more information see https://gw4-isambard.github.io/docs/
