@@ -7,3 +7,4 @@ See the individual directory for more details on how to use the scripts:
 
 * [2019](2019/)
 * [2020](2020/)
+* [2024](2024/)
