@@ -2,17 +2,18 @@
 
 set -eu
 
+prime_chapel() {
+  echo "Not yet implemented"
+}
+
 prime_kokkos() {
-  KOKKOS_VER="3.6.01"
+  KOKKOS_VER="4.2.00"
   KOKKOS_DIR="$SRC_DIR/kokkos-$KOKKOS_VER"
 
   echo "Using Kokkos src $KOKKOS_DIR"
 
   if [ ! -e "$KOKKOS_DIR" ]; then
-    wget "https://github.com/kokkos/kokkos/archive/$KOKKOS_VER.tar.gz"
-
-    tar -xf "$KOKKOS_VER.tar.gz" -C "$SRC_DIR"
-    rm "$KOKKOS_VER.tar.gz"
+    git clone --branch cmake --depth 1 https://github.com/milthorpe/kokkos.git $KOKKOS_DIR
   fi
   export KOKKOS_DIR="$KOKKOS_DIR"
 }
@@ -24,10 +25,9 @@ load_nvhpc() {
     spack load nvhpc@22.7
     NVHPC_PATH=$(realpath "$(dirname "$(which nvc++)")/../../")
   else
-    export NVHPC_PATH
-    NVHPC_PATH="/lustre/home/br-wlin/nvhpc_sdk/Linux_$(uname -m)/22.7"
-    if [ ! -d "$NVHPC_PATH" ]; then
-      echo "NVHPC dir '$NVHPC_PATH' is not a directory"
+    module load nvhpc
+    if [ ! -d "$NVHPC_ROOT" ]; then
+      echo "NVHPC_ROOT '$NVHPC_ROOT' is not a directory"
       exit 2
     fi
   fi
