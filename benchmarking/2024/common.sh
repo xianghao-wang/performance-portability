@@ -19,13 +19,14 @@ prime_kokkos() {
 }
 
 load_nvhpc() {
+  VERSION=${1:-23.11}
   if grep -q "Amazon Linux" "/etc/os-release"; then
     # use spack
     export NVHPC_PATH
-    spack load nvhpc@22.7
+    spack load nvhpc@${VERSION}
     NVHPC_PATH=$(realpath "$(dirname "$(which nvc++)")/../../")
   else
-    module load nvhpc
+    module load nvhpc/${VERSION}
     if [ ! -d "$NVHPC_ROOT" ]; then
       echo "NVHPC_ROOT '$NVHPC_ROOT' is not a directory"
       exit 2
@@ -132,9 +133,9 @@ handle_exec() {
 
     if [ "$USE_MAKE" = true ]; then
       echo "[$ACTION] Using make opts: $MAKE_OPTS"
-      make clean
-      eval make -B "$MAKE_OPTS" -j "$(nproc)"
-      ldd "$src/$BENCHMARK_EXE"
+      make -C src/$MODEL clean "$MAKE_OPTS"
+      eval make -C src/$MODEL -B -j "$(nproc)" "$MAKE_OPTS"
+      ldd "$src/src/$MODEL/$BENCHMARK_EXE"
     else
       read -ra CMAKE_OPTS <<<"${MAKE_OPTS}" # explicit word splitting
       echo "[$ACTION] Using cmake opts:" "${CMAKE_OPTS[@]}"
@@ -147,7 +148,7 @@ handle_exec() {
   elif [ "$ACTION" == "run" ] || [ "$ACTION" == "run-scale" ]; then
 
     if [ "$USE_MAKE" = true ]; then
-      export BENCHMARK_EXE="$src/$BENCHMARK_EXE"
+      export BENCHMARK_EXE="${src}/src/${MODEL}/${BENCHMARK_EXE}"
     else
       export BENCHMARK_EXE="$src/build/$BENCHMARK_EXE"
     fi
@@ -180,13 +181,19 @@ handle_exec() {
       else
         qsub -o "$name".out -N "$name" -V "$job"
       fi
+      retval=$?
     else
       echo "No queue, starting local exec: $name"
       : >"$OUT_FILE"
       set +e # don't fail on non-zero exit
       bash "$job" &> >(tee -a "$OUT_FILE")
+      retval=$?
       set -e # restore
-      echo "$name complete."
+      if [ $retval -ne 0 ]; then
+        echo "$name failed!"
+      else
+        echo "$name complete."
+      fi
     fi
 
   else
@@ -195,5 +202,9 @@ handle_exec() {
     echo "Invalid action: $ACTION"
     exit 1
   fi
-  echo "[$ACTION] Complete!"
+  if [ $retval -ne 0 ]; then
+    echo "[$ACTION] failed!"
+  else
+    echo "[$ACTION] Complete!"
+  fi
 }
