@@ -8,7 +8,7 @@ function usage() {
   echo
   echo "Valid compilers:"
   echo "  chapel-1.33"
-  echo "  nvhpc-23.9"
+  echo "  nvhpc-23.11"
   echo "  clang-17.0.6"
   echo
   echo "Valid models:"
@@ -49,8 +49,8 @@ chapel-1.33)
   source /noback/46x/chapel-1.33/util/setchplenv.bash
   USE_MAKE=true
   ;;
-nvhpc-23.9)
-  load_nvhpc
+nvhpc-23.11)
+  load_nvhpc 23.11
   append_opts "-DCMAKE_C_COMPILER=$NVHPC_ROOT/compilers/bin/nvc"
   append_opts "-DCMAKE_CXX_COMPILER=$NVHPC_ROOT/compilers/bin/nvc++"
   ;;
