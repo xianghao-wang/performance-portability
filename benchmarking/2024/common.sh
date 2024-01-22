@@ -135,6 +135,7 @@ handle_exec() {
       echo "[$ACTION] Using make opts: $MAKE_OPTS"
       make -C src/$MODEL clean "$MAKE_OPTS"
       eval make -C src/$MODEL -B -j "$(nproc)" "$MAKE_OPTS"
+      retval=$?
       ldd "$src/src/$MODEL/$BENCHMARK_EXE"
     else
       read -ra CMAKE_OPTS <<<"${MAKE_OPTS}" # explicit word splitting
@@ -142,6 +143,7 @@ handle_exec() {
       rm -rf build
       cmake -Bbuild -H. -DCMAKE_BUILD_TYPE=RELEASE "${CMAKE_OPTS[@]}"
       cmake --build build --config RELEASE -j "$(nproc)"
+      retval=$?
       ldd "$src/build/$BENCHMARK_EXE"
     fi
 
