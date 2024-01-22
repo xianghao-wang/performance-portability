@@ -1,15 +1,15 @@
 # 2024 Performance Portability Benchmarks
 
-This directory contains work-in-progress scripts as they are prepared for next year's performance portability update.
+This directory contains work-in-progress scripts for a 2024 performance portability update.
 
 ## Structure
 
 Each subdirectory corresponds to an application.
 For each application, there are:
 
-* A subdirectory with build and run scripts for each of the platforms in the study
+* Subdirectories with build and run scripts for each of the platforms in the study
 * A results directory aggregating the output of the run scripts
-* A common "plumbing" script
+* A common "plumbing" script `common.sh`
 
 For the platforms included in the study, follow the steps below to build and run an application.
 To use the scripts on a different platforms, paths and modules may need to be adjusted.
@@ -17,7 +17,7 @@ To use the scripts on a different platforms, paths and modules may need to be ad
 ### Script Usage
 
 Each platform subdirectory contains a `benchmark.sh` script, which is the only script you need to run.
-The interface is the same to all `benchmark.sh` scripts across platforms, but the compilers and programming models available differ, e.g. the Intel Compiler is only available on x86 platforms.
+The interface is the same to all `benchmark.sh` scripts across platforms, but the compilers and programming models available differ, e.g. the Intel compiler is only available on x86 platforms.
 Select the platform you're running on, change to its directory, then run `./benchmark.sh -h` to see the available options.
 Choose a programming model and compiler from the available options, then run the script:
 
