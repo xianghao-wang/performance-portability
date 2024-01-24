@@ -1,0 +1,31 @@
+#!/bin/bash
+#PBS -q voltaq
+#PBS -l select=1:ngpus=1
+#PBS -l walltime=00:10:00
+#PBS -l place=excl
+#PBS -joe
+
+set -eu
+
+cd "$RUN_DIR" || exit 2
+date
+echo "$PWD"
+ldd "$BENCHMARK_EXE"
+
+if [ "${LARGE:-}" = true ]; then
+    opts=("--arraysize" "536870912")
+else
+    opts=("--arraysize" "268435456") # four times the size of Rome LLC
+fi 
+
+case "$MODEL" in
+omp | tbb | std-* | kokkos | chapel)
+    export OMP_PROC_BIND=spread
+    export OMP_PLACES=threads
+    "$BENCHMARK_EXE" "${opts[@]:-}"
+    ;;
+*)
+    echo "Unknown run configuration for model '$MODEL'"
+    exit 1
+    ;;
+esac
