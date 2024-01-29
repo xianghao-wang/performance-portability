@@ -33,7 +33,7 @@ source "${SCRIPT_DIR}/../fetch_src.sh"
 
 module load cmake/3.26.3
 
-handle_cmd "${1}" "${2}" "${3}" "miniBUDE" "a100"
+handle_cmd "${1}" "${2}" "${3}" "miniBUDE" "v100"
 
 export USE_MAKE=false
 
@@ -72,7 +72,7 @@ chapel)
   export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CUDA_PATH/lib64
   append_opts "CHPL_LOCALE_MODEL=gpu"
   append_opts "CHPL_GPU=nvidia"
-  append_opts "CHPL_GPU_ARCH=sm_80"
+  append_opts "CHPL_GPU_ARCH=sm_70"
   append_opts "PPWI=4"
   BENCHMARK_EXE="chapel-bude"
   ;;
@@ -81,9 +81,11 @@ kokkos)
   export CUDA_ROOT="$NVHPC_ROOT/cuda"
   append_opts "-DMODEL=kokkos"
   append_opts "-DKOKKOS_IN_TREE=$KOKKOS_DIR -DKokkos_ENABLE_CUDA=ON -DKokkos_ENABLE_CUDA_LAMBDA=ON"
-  append_opts "-DKokkos_ARCH_AMPERE80=ON"
+  append_opts "-DKokkos_ARCH_VOLTA70=ON"
   append_opts "-DCMAKE_C_COMPILER=gcc"
   append_opts "-DCMAKE_CXX_COMPILER=$KOKKOS_DIR/bin/nvcc_wrapper"
+  append_opts "-DCMAKE_CXX_FLAGS=-arch=sm_70"
+  append_opts "-DKOKKOS_INTERNAL_CUDA_ARCH_FLAG=sm_70"
   append_opts "-DCXX_EXTRA_FLAGS=-O3;--use_fast_math"
   BENCHMARK_EXE="kokkos-bude"
   ;;
@@ -93,24 +95,24 @@ cuda)
   append_opts "-DCMAKE_C_COMPILER=gcc"
   append_opts "-DCMAKE_CXX_COMPILER=g++" 
   # fastmath enabled by default
-  append_opts "-DCUDA_ARCH=sm_80"
-  append_opts "-DCMAKE_CUDA_ARCHITECTURES=80"
+  append_opts "-DCUDA_ARCH=sm_70"
+  append_opts "-DCMAKE_CUDA_ARCHITECTURES=70"
   append_opts "-DCMAKE_CUDA_FLAGS=-allow-unsupported-compiler"
   BENCHMARK_EXE="cuda-bude"
   ;;
 omp)
   append_opts "-DMODEL=omp"
-  append_opts "-DOFFLOAD=NVIDIA:sm_80"
+  append_opts "-DOFFLOAD=NVIDIA:sm_70"
   BENCHMARK_EXE="omp-bude"
   ;;
 std-indices)
   append_opts "-DMODEL=std-indices"
-  append_opts "-DNVHPC_OFFLOAD=cc80"
+  append_opts "-DNVHPC_OFFLOAD=cc70"
   BENCHMARK_EXE="std-indices-bude"
   ;;
 std-ranges)
   append_opts "-DMODEL=std-ranges"
-  append_opts "-DNVHPC_OFFLOAD=cc80"
+  append_opts "-DNVHPC_OFFLOAD=cc70"
   BENCHMARK_EXE="std-ranges-bude"
   ;;
 *) unknown_model ;;
