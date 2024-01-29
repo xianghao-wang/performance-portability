@@ -55,7 +55,7 @@ case "$MODEL" in
 chapel)
   BENCHMARK_EXE="chapel-bude"
   append_opts "CHPL_LOCALE_MODEL=flat"
-  append_opts "PPWI=16"
+  append_opts "PPWI=4"
   ;;
 kokkos)
   prime_kokkos
