@@ -86,7 +86,7 @@ hip)
   BENCHMARK_EXE="hip-stream"
   ;;
 omp)
-  append_opts "-DCMAKE_CXX_COMPILER=/usr/lib/aomp_18.0-0/bin/amdclang++"
+  append_opts "-DCMAKE_CXX_COMPILER=$(which clang++)"
   append_opts "-DMODEL=omp"
   append_opts "-DOFFLOAD=AMD:gfx906"
   BENCHMARK_EXE="omp-stream"
