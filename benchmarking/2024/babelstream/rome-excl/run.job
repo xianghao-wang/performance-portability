@@ -18,7 +18,7 @@ else
     opts=("--arraysize" "268435456") # four times the size of Rome LLC
 fi
 
-export OMP_NUM_THREADS=64
+export OMP_NUM_THREADS=128
 #export OMP_PROC_BIND=true
 #export OMP_PLACES=cores 
 
