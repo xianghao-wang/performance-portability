@@ -19,9 +19,12 @@ else
 fi
 
 case "$MODEL" in
-omp | tbb | std-* | kokkos | chapel)
-    export OMP_PROC_BIND=spread
-    export OMP_PLACES=threads
+chapel)
+    "$BENCHMARK_EXE" "${opts[@]:-}"
+    ;;
+omp | tbb | std-* | kokkos)
+    export OMP_PROC_BIND=true
+    export OMP_PLACES=cores
     "$BENCHMARK_EXE" "${opts[@]:-}"
     ;;
 *)
