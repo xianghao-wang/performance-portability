@@ -30,22 +30,27 @@ source "${SCRIPT_DIR}/../../common.sh"
 source "${SCRIPT_DIR}/../fetch_src.sh"
 
 module load cmake/3.26.3
-module load rocm/5.4.3
-export ROCM_PATH="/opt/rocm-5.4.3"
 
-handle_cmd "${1}" "${2}" "${3}" "miniBUDE" "mi60"
+handle_cmd "${1}" "${2}" "${3}" "miniBUDE" "mi100"
 
 export USE_MAKE=false
 
 case "$COMPILER" in
 chapel-1.33)
+  module load rocm/5.4.3
   source /noback/46x/chapel-1.33/util/setchplenv.bash
   USE_MAKE=true
   ;;
 rocm-5.4.3)
-  export PATH="/opt/rocm-5.4.3/bin:${PATH:-}"
+  module load rocm/5.4.3
+  export PATH="${ROCM_PATH}/bin:${PATH:-}"
+  ;;
+rocm-6.0.0)
+  module load rocm/6.0.0
+  export PATH="${ROCM_PATH}/bin:${PATH:-}"
   ;;
 aomp-18.0.0)
+  module load rocm/5.4.3
   export AOMP=$HOME/usr/lib/aomp_18.0-0
   export PATH="$AOMP/bin:${PATH:-}"
   export LD_LIBRARY_PATH="$AOMP/lib64:${LD_LIBRARY_PATH:-}"
