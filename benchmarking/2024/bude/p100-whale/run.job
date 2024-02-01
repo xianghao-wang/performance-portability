@@ -19,7 +19,7 @@ export OMP_TARGET_OFFLOAD=MANDATORY
 
 case "$MODEL" in
 chapel)
-    CUDA_VISIBLE_DEVICES=0 "$BENCHMARK_EXE" --deck miniBUDE/data/bm1 --wgsize 32 --gpuUseStreamPerTask=false
+    CUDA_VISIBLE_DEVICES=0 "$BENCHMARK_EXE" --deck miniBUDE/data/bm1 --wgsize 64 --gpuUseStreamPerTask=false
     ;;
 std-*)
     "$BENCHMARK_EXE" --list
@@ -27,14 +27,19 @@ std-*)
     ;;
 kokkos)
     "$BENCHMARK_EXE" --list
-    "$BENCHMARK_EXE" --deck miniBUDE/data/bm1 --wgsize 2,4,8,16,32 --ppwi all # wgsize > 32 segfaults
-    #"$BENCHMARK_EXE" --deck miniBUDE/data/bm1 --wgsize 32 --ppwi 4
+    #"$BENCHMARK_EXE" --deck miniBUDE/data/bm1 --wgsize 2,4,8,16,32 --ppwi all # wgsize > 32 segfaults
+    "$BENCHMARK_EXE" --deck miniBUDE/data/bm1 --wgsize 32 --ppwi 4
     ;;
-cuda | omp)
+cuda)
     "$BENCHMARK_EXE" --list
-     "$BENCHMARK_EXE" --deck miniBUDE/data/bm1 --wgsize 4,8,16,32,64,128 --ppwi all # wgsize < 4 is too slow
-    #"$BENCHMARK_EXE" --deck miniBUDE/data/bm1 --wgsize 32 --ppwi 4
+    #"$BENCHMARK_EXE" --deck miniBUDE/data/bm1 --wgsize 4,8,16,32,64,128 --ppwi all # wgsize < 4 is too slow
+    "$BENCHMARK_EXE" --deck miniBUDE/data/bm1 --wgsize 64 --ppwi 8
     ;;
+omp)
+    "$BENCHMARK_EXE" --list
+    #"$BENCHMARK_EXE" --deck miniBUDE/data/bm1 --wgsize 4,8,16,32,64,128 --ppwi all # wgsize < 4 is too slow
+    "$BENCHMARK_EXE" --deck miniBUDE/data/bm1 --wgsize 256 --ppwi 4
+	;;
 *)
     echo "Unknown run configuration for model '$MODEL'"
     exit 1
