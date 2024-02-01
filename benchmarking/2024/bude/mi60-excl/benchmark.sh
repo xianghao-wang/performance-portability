@@ -83,21 +83,21 @@ kokkos)
   append_opts "-DKokkos_ARCH_VEGA906=ON"
   append_opts "-DCMAKE_C_COMPILER=gcc"
   append_opts "-DCMAKE_CXX_COMPILER=hipcc"
-  append_opts "-DCXX_EXTRA_FLAGS=-march=znver3;-Ofast"
+  append_opts "-DCXX_EXTRA_FLAGS=-Ofast"
   BENCHMARK_EXE="kokkos-bude"
   ;;
 hip)
   append_opts "-DMODEL=hip"
   append_opts "-DCMAKE_C_COMPILER=gcc"
   append_opts "-DCMAKE_CXX_COMPILER=hipcc" # auto detected
-  append_opts "-DCXX_EXTRA_FLAGS=--offload-arch=gfx906;-march=znver3;-Ofast"
+  append_opts "-DCXX_EXTRA_FLAGS=--offload-arch=gfx906;-Ofast"
   BENCHMARK_EXE="hip-bude"
   ;;
 omp)
   append_opts "-DCMAKE_CXX_COMPILER=$(which clang++)"
   append_opts "-DMODEL=omp"
   append_opts "-DOFFLOAD=AMD:gfx906"
-  append_opts "-DCXX_EXTRA_FLAGS=-march=znver3;-Ofast;-fopenmp-target-fast"
+  append_opts "-DCXX_EXTRA_FLAGS=-Ofast;-fopenmp-target-fast"
   BENCHMARK_EXE="omp-bude"
   ;;
 *) unknown_model ;;
