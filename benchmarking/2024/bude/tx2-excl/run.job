@@ -18,12 +18,13 @@ ldd "$BENCHMARK_EXE"
 
 case "$MODEL" in
 chapel)
+    export CHPL_RT_NUM_THREADS_PER_LOCALE=MAX_LOGICAL
     "$BENCHMARK_EXE" --deck miniBUDE/data/bm1 --wgsize 1
     ;;
 omp | tbb | std-* | kokkos)
-    export OMP_PROC_BIND=spread
-    export OMP_PLACES=threads
-    "$BENCHMARK_EXE" --deck miniBUDE/data/bm1 --wgsize 1 --ppwi all
+    export OMP_PROC_BIND=true
+    export OMP_PLACES=cores
+    "$BENCHMARK_EXE" --deck miniBUDE/data/bm1 --wgsize 1 --ppwi 32,64,128
     ;;
 *)
     echo "Unknown run configuration for model '$MODEL'"
