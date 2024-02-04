@@ -44,7 +44,7 @@ chapel-1.33)
 clang-17.0.6)
   module load llvm/17.0.6
   append_opts "-DCMAKE_CXX_COMPILER=/auto/software/swtree/ubuntu22.04/x86_64/llvm/17.0.6/bin/clang++"
-  append_opts "-DCXX_EXTRA_FLAGS=-march=znver3;-Ofast"
+  append_opts "-DCXX_EXTRA_FLAGS=-march=znver2;-Ofast"
   ;;
 *) unknown_compiler ;;
 esac
