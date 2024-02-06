@@ -23,7 +23,7 @@ export OMP_TARGET_OFFLOAD=MANDATORY
 
 case "$MODEL" in
 omp | std-* | cuda | kokkos | chapel)
-    "$BENCHMARK_EXE" "${opts[@]:-}"
+    CUDA_VISIBLE_DEVICES=1 "$BENCHMARK_EXE" "${opts[@]:-}"
     ;;
 *)
     echo "Unknown run configuration for model '$MODEL'"

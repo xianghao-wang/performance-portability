@@ -17,7 +17,8 @@ cp $SRC_DIR/tea.problems tea.problems
 
 case "$MODEL" in
 chapel)
-    export CHPL_RT_NUM_THREADS_PER_LOCALE=MAX_LOGICAL
+    #export CHPL_RT_NUM_THREADS_PER_LOCALE=MAX_LOGICAL
+    export CHPL_RT_NUM_THREADS_PER_LOCALE=126
     "$BENCHMARK_EXE" "${opts[@]:-}"
     ;;
 omp | std-* | cuda | kokkos | chapel)

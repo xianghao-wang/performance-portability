@@ -23,7 +23,7 @@ export OMP_TARGET_OFFLOAD=MANDATORY
 
 case "$MODEL" in
 omp | std-* | hip | kokkos | chapel)
-    "$BENCHMARK_EXE" "${opts[@]:-}"
+    ROCR_VISIBLE_DEVICE=1 "$BENCHMARK_EXE" "${opts[@]:-}"
     ;;
 *)
     echo "Unknown run configuration for model '$MODEL'"

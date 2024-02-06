@@ -72,6 +72,7 @@ chapel)
   append_opts "CHPL_LOCALE_MODEL=gpu"
   append_opts "CHPL_GPU=amd"
   append_opts "CHPL_GPU_ARCH=gfx908"
+  append_opts "BLOCK_SIZE=256"
   BENCHMARK_EXE="chapel-tealeaf"
   ;;
 kokkos)
