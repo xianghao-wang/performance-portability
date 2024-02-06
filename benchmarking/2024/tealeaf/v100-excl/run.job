@@ -1,0 +1,32 @@
+#!/bin/bash
+#PBS -q voltaq
+#PBS -l select=1:ngpus=1
+#PBS -l walltime=00:10:00
+#PBS -l place=excl
+#PBS -joe
+
+set -eu
+
+cd "$RUN_DIR" || exit 2
+date
+echo "$PWD"
+ldd "$BENCHMARK_EXE"
+
+cp $SRC_DIR/Benchmarks/tea_bm_5.in tea.in
+cp $SRC_DIR/tea.problems tea.problems
+
+if [ "$MODEL" = chapel ]; then
+    opts+=("--gpuUseStreamPerTask=false")
+fi
+
+export OMP_TARGET_OFFLOAD=MANDATORY
+
+case "$MODEL" in
+omp | std-* | cuda | kokkos | chapel)
+    "$BENCHMARK_EXE" "${opts[@]:-}"
+    ;;
+*)
+    echo "Unknown run configuration for model '$MODEL'"
+    exit 1
+    ;;
+esac
