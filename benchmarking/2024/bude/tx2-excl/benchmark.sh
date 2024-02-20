@@ -55,7 +55,7 @@ case "$MODEL" in
 chapel)
   BENCHMARK_EXE="chapel-bude"
   append_opts "CHPL_LOCALE_MODEL=flat"
-  append_opts "PPWI=16"
+  append_opts "PPWI=32"
   append_opts "CHPL_TARGET_ARCH=aarch64"
   append_opts "CHPL_TARGET_CPU=thunderx2t99"
   append_opts "CHPL_LLVM_FLAGS=-force-vector-width=4"

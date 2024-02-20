@@ -20,7 +20,7 @@ chapel)
     export CHPL_RT_NUM_THREADS_PER_LOCALE=MAX_LOGICAL
     "$BENCHMARK_EXE" --deck miniBUDE/data/bm1 --wgsize 1
     ;;
-omp | tbb | std-* | kokkos | chapel)
+omp | tbb | std-* | kokkos)
     export OMP_PROC_BIND=true
     export OMP_PLACES=cores
     #"$BENCHMARK_EXE" --deck miniBUDE/data/bm1 --wgsize 1 --ppwi all

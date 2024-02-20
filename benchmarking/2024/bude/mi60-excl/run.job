@@ -19,7 +19,7 @@ export OMP_TARGET_OFFLOAD=MANDATORY
 
 case "$MODEL" in
 chapel)
-    ROCR_VISIBLE_DEVICES=0 "$BENCHMARK_EXE" --deck miniBUDE/data/bm1 --wgsize 256 --gpuUseStreamPerTask=false
+    ROCR_VISIBLE_DEVICES=0 "$BENCHMARK_EXE" --deck miniBUDE/data/bm1 --wgsize 128 --gpuUseStreamPerTask=false
     ;;
 std-*)
     "$BENCHMARK_EXE" --list
