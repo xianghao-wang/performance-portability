@@ -17,10 +17,11 @@ ldd "$BENCHMARK_EXE"
 
 case "$MODEL" in
 chapel)
+	export CHPL_RT_NUM_THREADS_PER_LOCALE=MAX_LOGICAL
     "$BENCHMARK_EXE" --deck miniBUDE/data/bm1 --wgsize 1
     ;;
 omp | tbb | std-* | kokkos | chapel)
-    export OMP_NUM_THREADS=16
+    export OMP_NUM_THREADS=32
     export OMP_PROC_BIND=true
     export OMP_PLACES=cores
     #"$BENCHMARK_EXE" --deck miniBUDE/data/bm1 --wgsize 1 --ppwi all

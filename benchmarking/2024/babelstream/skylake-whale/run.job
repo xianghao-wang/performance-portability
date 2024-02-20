@@ -20,9 +20,11 @@ fi
 
 case "$MODEL" in
 chapel)
+	export CHPL_RT_NUM_THREADS_PER_LOCALE=MAX_LOGICAL
     "$BENCHMARK_EXE" "${opts[@]:-}"
     ;;
 omp | tbb | std-* | kokkos)
+	export OMP_NUM_THREADS=32
     export OMP_PROC_BIND=true
     export OMP_PLACES=cores
     "$BENCHMARK_EXE" "${opts[@]:-}"
