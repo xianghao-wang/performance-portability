@@ -7,6 +7,7 @@ function usage() {
   echo "Usage: ./benchmark.sh build|run [COMPILER] [MODEL]"
   echo
   echo "Valid compilers:"
+  echo "  chapel-2.0"
   echo "  chapel-1.33"
   echo "  rocm-5.4.3"
   echo "  rocm-6.0.0"
@@ -31,13 +32,24 @@ source "${SCRIPT_DIR}/../../common.sh"
 source "${SCRIPT_DIR}/../fetch_src.sh"
 
 module load cmake/3.26.3
-export ROCM_PATH="/opt/rocm-5.4.3"
 
 handle_cmd "${1}" "${2}" "${3}" "miniBUDE" "mi60"
 
 export USE_MAKE=false
 
 case "$COMPILER" in
+chapel-2.0)
+  module load rocm/5.4.3
+  source /noback/46x/chapel-1.33/util/setchplenv.bash
+  append_opts "CHPL_LLVM=system"
+  USE_MAKE=true
+  ;;
+chapel-2.0-rocm)
+  module load rocm/6.0.2
+  source /noback/46x/chapel-rocm6/util/setchplenv.bash
+  append_opts "CHPL_LLVM=system"
+  USE_MAKE=true
+  ;;
 chapel-1.33)
   module load rocm/5.4.3
   source /noback/46x/chapel-1.33/util/setchplenv.bash

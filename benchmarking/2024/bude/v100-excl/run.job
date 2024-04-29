@@ -19,7 +19,7 @@ export OMP_TARGET_OFFLOAD=MANDATORY
 
 case "$MODEL" in
 chapel)
-    CUDA_VISIBLE_DEVICES=3 "$BENCHMARK_EXE" --deck miniBUDE/data/bm1 --wgsize 128 --gpuUseStreamPerTask=false
+    CUDA_VISIBLE_DEVICES=0 "$BENCHMARK_EXE" --deck miniBUDE/data/bm1 --wgsize 128 --gpuUseStreamPerTask=false
     ;;
 std-*)
     "$BENCHMARK_EXE" --list
@@ -28,7 +28,7 @@ std-*)
 kokkos)
     "$BENCHMARK_EXE" --list
     #"$BENCHMARK_EXE" --deck miniBUDE/data/bm1 --wgsize 2,4,8,16,32 --ppwi all # wgsize > 32 segfaults
-    CUDA_VISIBLE_DEVICES=3 "$BENCHMARK_EXE" --deck miniBUDE/data/bm1 --wgsize 32 --ppwi 2,4,8
+    CUDA_VISIBLE_DEVICES=0 "$BENCHMARK_EXE" --deck miniBUDE/data/bm1 --wgsize 32 --ppwi 4
     ;;
 cuda | omp)
     "$BENCHMARK_EXE" --list

@@ -7,6 +7,7 @@ function usage() {
   echo "Usage: ./benchmark.sh build|run [COMPILER] [MODEL]"
   echo
   echo "Valid compilers:"
+  echo "  chapel-2.0"
   echo "  chapel-1.33"
   echo "  rocm-5.4.3"
   echo "  aomp-18.0.0"
@@ -36,6 +37,19 @@ handle_cmd "${1}" "${2}" "${3}" "TeaLeaf" "mi100"
 export USE_MAKE=false
 
 case "$COMPILER" in
+chapel-2.0)
+  module load rocm/5.4.3
+  source /noback/46x/chapel-2.0/util/setchplenv.bash
+  append_opts "CHPL_LLVM=system"
+  export CHPL_FLAGS='--ccflags -isystem/opt/rocm-5.4.3/llvm/lib/clang/15.0.0/include'
+  USE_MAKE=true
+  ;;
+chapel-2.0-rocm6)
+  module load rocm/6.0.2
+  source /noback/46x/chapel-rocm6/util/setchplenv.bash
+  append_opts "CHPL_LLVM=system"
+  USE_MAKE=true
+  ;;
 chapel-1.33)
   module load rocm/5.4.3
   source /noback/46x/chapel-1.33/util/setchplenv.bash

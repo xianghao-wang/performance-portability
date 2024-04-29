@@ -7,6 +7,7 @@ function usage() {
   echo "Usage: ./benchmark.sh build|run [COMPILER] [MODEL]"
   echo
   echo "Valid compilers:"
+  echo "  chapel-2.0"
   echo "  chapel-1.33"
   echo "  nvhpc-23.11"
   echo "  clang-17.0.6"
@@ -38,6 +39,16 @@ handle_cmd "${1}" "${2}" "${3}" "miniBUDE" "a100"
 export USE_MAKE=false
 
 case "$COMPILER" in
+chapel-2.0)
+  load_nvhpc 23.11 # Chapel GPU also requires CUDA libraries
+  export CC=`which gcc` # the nvhpc module sets CC=nvc, which confuses Chapel
+  export CXX=`which g++` # the nvhpc module sets CXX=nvc++
+  export CUDA_PATH=/opt/nvidia/hpc_sdk/Linux_x86_64/23.11/cuda/11.8
+  export PATH=${CUDA_PATH}/bin:$PATH
+  export CHPL_CUDA_PATH=$CUDA_PATH
+  source /noback/46x/chapel-2.0/util/setchplenv.bash
+  USE_MAKE=true
+  ;;
 chapel-1.33)
   load_nvhpc 23.11 # Chapel GPU also requires CUDA libraries
   export CC=`which gcc` # the nvhpc module sets CC=nvc, which confuses Chapel
