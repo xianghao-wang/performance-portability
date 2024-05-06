@@ -42,7 +42,7 @@ chapel-2.0)
   module load rocm/5.4.3
   source /noback/46x/chapel-2.0/util/setchplenv.bash
   append_opts "CHPL_LLVM=system"
-  append_opts "CHPL_FLAGS='--ccflags -isystem/opt/rocm-5.4.3/llvm/lib/clang/15.0.0/include'"
+  export CHPL_FLAGS='--ccflags -isystem/opt/rocm-5.4.3/llvm/lib/clang/15.0.0/include'
   USE_MAKE=true
   ;;
 chapel-2.0-rocm6)
