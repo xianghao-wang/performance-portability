@@ -32,7 +32,7 @@ source "${SCRIPT_DIR}/../fetch_src.sh"
 
 module load cmake/3.23.2
 
-handle_cmd "${1}" "${2}" "${3}" "miniBUDE" "mi250"
+handle_cmd "${1}" "${2}" "${3}" "TeaLeaf" "mi250"
 
 export USE_MAKE=false
 export USE_SLURM=true
@@ -55,7 +55,7 @@ chapel-1.33)
   USE_MAKE=true
   ;;
 rocm-5.4.3)
-  module load rocm/5.4.3
+  module load rocm/5.4.3 
   export PATH="${ROCM_PATH}/bin:${PATH:-}"
   ;;
 rocm-6.0.0)
@@ -85,8 +85,8 @@ chapel)
   append_opts "CHPL_LOCALE_MODEL=gpu"
   append_opts "CHPL_GPU=amd"
   append_opts "CHPL_GPU_ARCH=gfx90a"
-  append_opts "PPWI=4"
-  BENCHMARK_EXE="chapel-bude"
+  append_opts "BLOCK_SIZE=256"
+  BENCHMARK_EXE="chapel-tealeaf"
   ;;
 kokkos)
   prime_kokkos
@@ -96,22 +96,23 @@ kokkos)
   append_opts "-DCMAKE_C_COMPILER=gcc"
   append_opts "-DCMAKE_CXX_COMPILER=hipcc"
   append_opts "-DCXX_EXTRA_FLAGS=-Ofast"
-  BENCHMARK_EXE="kokkos-bude"
+  BENCHMARK_EXE="kokkos-tealeaf"
   ;;
 hip)
   append_opts "-DMODEL=hip"
   append_opts "-DCMAKE_C_COMPILER=gcc"
   append_opts "-DCMAKE_CXX_COMPILER=hipcc" # auto detected
   append_opts "-DCXX_EXTRA_FLAGS=--offload-arch=gfx90a;-Ofast"
-  BENCHMARK_EXE="hip-bude"
+  BENCHMARK_EXE="hip-tealeaf"
   ;;
 omp)
   module load craype-accel-amd-gfx90a
+  append_opts "-DCMAKE_C_COMPILER=$(which amdclang)"
   append_opts "-DCMAKE_CXX_COMPILER=$(which amdclang++)"
   append_opts "-DMODEL=omp"
   append_opts "-DOFFLOAD=AMD:gfx90a"
   append_opts "-DCXX_EXTRA_FLAGS=-Ofast;-fopenmp-target-fast"
-  BENCHMARK_EXE="omp-bude"
+  BENCHMARK_EXE="omp-tealeaf"
   ;;
 *) unknown_model ;;
 esac

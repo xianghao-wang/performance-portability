@@ -1,9 +1,14 @@
 #!/bin/bash
-#SBATCH -A CSC383
+#SBATCH -A CSC567
 #SBATCH -J miniBUDE
 #PBS -l walltime=00:10:00
 #SBATCH -p batch
 #SBATCH -N 1
+#SBATCH -n 1
+#SBATCH -c 7
+#SBATCH -m block:block
+#SBATCH --gpus-per-node 8
+#SBATCH --gpu-bind=closest
 #PBS -joe
 
 : >"$OUT_FILE"
@@ -12,6 +17,11 @@ exec &> >(tee -a "$OUT_FILE")
 set -eu
 
 cd "$RUN_DIR" || exit 2
+
+if [ "$MODEL" = omp ]; then
+  module load craype-accel-amd-gfx90a
+fi
+
 date
 echo "$PWD"
 ldd "$BENCHMARK_EXE"
@@ -20,12 +30,11 @@ export OMP_TARGET_OFFLOAD=MANDATORY
 
 case "$MODEL" in
 chapel)
-    source /lustre/orion/csc383/world-shared/milthorpe/chapel-1.31/util/setchplenv.bash
-    export CHPL_LLVM=bundled
-    export CHPL_HOST_PLATFORM=hpe-cray-ex
-    export CHPL_LAUNCHER=slurm-srun
-    export CHPL_GPU_HOME=/ccs/home/milthorpe/chapel-gpu/install_frontier
-    export SLURM_CPUS_PER_TASK=56 # TODO why can't Crusher allocate 64 CPUs per (single-node) task?
+    source /lustre/orion/csc567/world-shared/milthorpe/chapel-2.0/util/setchplenv.bash
+    export CHPL_LLVM=system
+    export CHPL_COMM=none
+    export CHPL_LAUNCHER=none
+    export SLURM_CPUS_PER_TASK=7 # Frontier reserves 8 cores for system processes
     ROCR_VISIBLE_DEVICES=0 "$BENCHMARK_EXE" --deck miniBUDE/data/bm1 --wgsize 64 --gpuUseStreamPerTask=false
     ROCR_VISIBLE_DEVICES=0 "$BENCHMARK_EXE" --deck miniBUDE/data/bm1 --wgsize 128 --gpuUseStreamPerTask=false
     ROCR_VISIBLE_DEVICES=0 "$BENCHMARK_EXE" --deck miniBUDE/data/bm1 --wgsize 256 --gpuUseStreamPerTask=false
@@ -34,13 +43,9 @@ std-*)
     "$BENCHMARK_EXE" --list
     "$BENCHMARK_EXE" --deck miniBUDE/data/bm1 --wgsize 1 --ppwi all
     ;;
-kokkos | hip)
+kokkos | hip | omp)
     "$BENCHMARK_EXE" --list
-    "$BENCHMARK_EXE" --deck miniBUDE/data/bm1 --wgsize 4,8,16,32 --ppwi all # wgsize > 32 segfaults
-    ;;
-omp)
-    "$BENCHMARK_EXE" --list
-    "$BENCHMARK_EXE" --deck miniBUDE/data/bm1 --wgsize 4,8,16,32,64,128,256 --ppwi all # wgsize < 4 is too slow
+    "$BENCHMARK_EXE" --deck miniBUDE/data/bm1 --wgsize 8,16,32,64,128,256 --ppwi 1,2,4,8 # wgsize > 32 segfaults
     ;;
 *)
     echo "Unknown run configuration for model '$MODEL'"

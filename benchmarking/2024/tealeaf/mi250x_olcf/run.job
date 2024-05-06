@@ -1,0 +1,49 @@
+#!/bin/bash
+#SBATCH -A CSC567
+#SBATCH -J miniBUDE
+#PBS -l walltime=00:10:00
+#SBATCH -p batch
+#SBATCH -N 1
+#PBS -joe
+
+: >"$OUT_FILE"
+exec &> >(tee -a "$OUT_FILE")
+
+set -eu
+
+cd "$RUN_DIR" || exit 2
+
+if [ "$MODEL" = omp ]; then
+  module load craype-accel-amd-gfx90a
+fi
+
+date
+echo "$PWD"
+ldd "$BENCHMARK_EXE"
+
+cp $SRC_DIR/Benchmarks/tea_bm_5.in tea.in
+cp $SRC_DIR/tea.problems tea.problems
+
+if [ "$MODEL" = chapel ]; then
+    opts+=("--gpuUseStreamPerTask=false")
+fi
+
+export OMP_TARGET_OFFLOAD=MANDATORY
+
+case "$MODEL" in
+chapel)
+    source /lustre/orion/csc567/world-shared/milthorpe/chapel-2.0/util/setchplenv.bash
+    export CHPL_LLVM=system
+    export CHPL_COMM=none
+    export CHPL_LAUNCHER=none
+    export SLURM_CPUS_PER_TASK=56 # Frontier reserves 8 cores for system processes
+    ROCR_VISIBLE_DEVICES=0 "$BENCHMARK_EXE" "${opts[@]:-}"
+    ;;
+omp | std-* | kokkos | hip)
+    "$BENCHMARK_EXE" "${opts[@]:-}"
+    ;;
+*)
+    echo "Unknown run configuration for model '$MODEL'"
+    exit 1
+    ;;
+esac

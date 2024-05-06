@@ -1,0 +1,41 @@
+#!/bin/bash
+#SBATCH -A CSC567
+#SBATCH -J helloworld
+#SBATCH -t 00:10:00
+#SBATCH -p batch
+#SBATCH -N 1
+
+set -eu
+
+cd "$RUN_DIR" || exit 2
+
+if [ "$MODEL" = omp ]; then
+  module load craype-accel-amd-gfx90a
+fi
+
+date
+echo "$PWD"
+ldd "$BENCHMARK_EXE"
+
+if [ "${LARGE:-}" = true ]; then
+    opts=("--arraysize" "536870912")
+else
+    opts=("--arraysize" "268435456") # four times the size of Rome LLC
+fi
+
+if [ "$MODEL" = chapel ]; then
+    opts+=("--gpuUseStreamPerTask=false")
+fi
+
+export OMP_TARGET_OFFLOAD=MANDATORY
+
+case "$MODEL" in
+omp | std-* | hip | kokkos | chapel)
+    "$BENCHMARK_EXE" --list
+    "$BENCHMARK_EXE" "${opts[@]:-}"
+    ;;
+*)
+    echo "Unknown run configuration for model '$MODEL'"
+    exit 1
+    ;;
+esac
