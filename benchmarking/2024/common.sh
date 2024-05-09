@@ -133,7 +133,7 @@ handle_exec() {
 
     if [ "$USE_MAKE" = true ]; then
       echo "[$ACTION] Using make opts: $MAKE_OPTS"
-      make -C src/$MODEL clean "$MAKE_OPTS"
+      make -C src/$MODEL clean $MAKE_OPTS
       eval make -C src/$MODEL -B -j "$(nproc)" "$MAKE_OPTS"
       retval=$?
       ldd "$src/src/$MODEL/$BENCHMARK_EXE"
