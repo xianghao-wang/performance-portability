@@ -12,12 +12,15 @@ date
 echo "$PWD"
 ldd "$BENCHMARK_EXE"
 
-opts=("all" "268435456")
+TASK_SIZE=268435456
 
 case "$MODEL" in
 omp | std-* | cuda | kokkos | chapel)
-    "$BENCHMARK_EXE" --list
-    "$BENCHMARK_EXE" "${opts[@]:-}"
+    "$BENCHMARK_EXE" dot "$TASK_SIZE"
+    "$BENCHMARK_EXE" complex_sum "$TASK_SIZE"
+    "$BENCHMARK_EXE" complex_sum_soa "$TASK_SIZE"
+    "$BENCHMARK_EXE" complex_min "$TASK_SIZE"
+    "$BENCHMARK_EXE" field_summary
     ;;
 *)
     echo "Unknown run configuration for model '$MODEL'"
