@@ -8,6 +8,7 @@ function usage() {
   echo
   echo "Valid compilers:"
   echo "  chapel-2.1"
+  echo "  clang--14.0.0"
   echo
   echo "Valid models:"
   echo "  chapel"
@@ -46,6 +47,9 @@ chapel-2.1)
   source $HOME/libs/chapel/util/setchplenv.bash
   USE_MAKE=true
   ;;
+clang-14.0.0)
+    append_opts "-DCMAKE_CXX_COMPILER=/usr/bin/clang++"
+  ;;
 *) unknown_compiler ;;
 esac
 
@@ -62,6 +66,11 @@ chapel)
   append_opts "CHPL_GPU=nvidia"
   append_opts "CHPL_GPU_ARCH=sm_70"
   BENCHMARK_EXE="chapel-reduced"
+  ;;
+openmp-target)
+  append_opts "-DMODEL=OpenMP-target"
+  append_opts "-DOFFLOAD=NVIDIA:sm_70"
+  BENCHMARK_EXE="omp-stream"
   ;;
 *) unknown_model ;;
 esac
