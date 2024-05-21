@@ -13,9 +13,9 @@ fetch_src() {
     fi
   else
     (
-      cd everythingsreduced
+      cd everythingsreduced/src
       # git fetch && git pull
     )
   fi
-  export SRC_DIR="$PWD/everythingsreduced"
+  export SRC_DIR="$PWD/everythingsreduced/src"
 }
